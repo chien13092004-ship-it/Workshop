@@ -5,53 +5,56 @@ weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 8 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Learn Amazon ECS.
+* Learn Amazon ECS components.
+* Practice Amazon ECS deployment.
+* Learn CI/CD concepts.
+* Learn AWS CodePipeline.
+* Learn GitHub integration.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 1 | - Learn Amazon ECS.<br>- Learn container orchestration.<br>- Review the basic Amazon ECS architecture. | 24/05/2026 | 24/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 2 | - Learn Amazon ECS components.<br>- Review Clusters, Services and Task Definitions.<br>- Learn the basics of ECS deployment. | 25/05/2026 | 25/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 3 | - Practice Amazon ECS.<br>- Explore the ECS console.<br>- Review the deployment workflow. | 26/05/2026 | 26/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 4 | - Learn CI/CD concepts.<br>- Review the software development lifecycle.<br>- Learn deployment automation concepts. | 27/05/2026 | 27/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 5 | - Learn AWS CodePipeline.<br>- Review the Source, Build and Deploy stages.<br>- Learn the basics of deployment pipelines. | 28/05/2026 | 28/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 6 | - Learn GitHub integration.<br>- Review version control concepts.<br>- Learn source code management. | 29/05/2026 | 29/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 7 | - Review weekly topics.<br>- Summarize Amazon ECS and CI/CD.<br>- Organize learning notes. | 30/05/2026 | 30/05/2026 | https://cloudjourney.awsstudygroup.com/ |
 
 ### Week 8 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Learned Amazon ECS:
+  * Understood the purpose of container orchestration.
+  * Reviewed the basic ECS architecture.
+  * Learned common ECS use cases.
 
-* Successfully created and configured an AWS Free Tier account.
+* Explored Amazon ECS components:
+  * Learned Clusters.
+  * Learned Services.
+  * Learned Task Definitions.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Practiced Amazon ECS:
+  * Explored the ECS console.
+  * Reviewed the deployment workflow.
+  * Became familiar with basic ECS resources.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Learned CI/CD concepts:
+  * Understood Continuous Integration.
+  * Understood Continuous Deployment.
+  * Learned the basics of deployment automation.
 
-* Used AWS CLI to perform basic operations such as:
+* Explored AWS CodePipeline:
+  * Learned the Source, Build and Deploy stages.
+  * Understood how deployment pipelines work.
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+* Explored GitHub integration:
+  * Learned version control concepts.
+  * Understood how GitHub integrates with AWS CodePipeline.
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Improved understanding of Amazon ECS, CI/CD and deployment automation.

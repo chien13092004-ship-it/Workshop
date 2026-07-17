@@ -5,55 +5,56 @@ weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 8:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Tìm hiểu Amazon ECS.
+* Tìm hiểu các thành phần của Amazon ECS.
+* Thực hành triển khai Amazon ECS.
+* Tìm hiểu các khái niệm về CI/CD.
+* Tìm hiểu AWS CodePipeline.
+* Tìm hiểu tích hợp GitHub.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------- | ----------------------------------------- |
+| 2 | - Tìm hiểu Amazon ECS.<br>- Tìm hiểu điều phối Container.<br>- Tìm hiểu kiến trúc cơ bản của Amazon ECS. | 24/05/2026 | 24/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 3 | - Tìm hiểu các thành phần của Amazon ECS.<br>- Tìm hiểu Clusters, Services và Task Definitions.<br>- Tìm hiểu kiến thức cơ bản về triển khai ECS. | 25/05/2026 | 25/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 4 | - Thực hành Amazon ECS.<br>- Khám phá giao diện ECS.<br>- Tìm hiểu quy trình triển khai. | 26/05/2026 | 26/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 5 | - Tìm hiểu các khái niệm về CI/CD.<br>- Tìm hiểu vòng đời phát triển phần mềm.<br>- Tìm hiểu các khái niệm về tự động hóa triển khai. | 27/05/2026 | 27/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 6 | - Tìm hiểu AWS CodePipeline.<br>- Tìm hiểu các giai đoạn Source, Build và Deploy.<br>- Tìm hiểu kiến thức cơ bản về Deployment Pipeline. | 28/05/2026 | 28/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 7 | - Tìm hiểu tích hợp GitHub.<br>- Tìm hiểu các khái niệm về quản lý phiên bản.<br>- Tìm hiểu quản lý mã nguồn. | 29/05/2026 | 29/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| CN | - Ôn tập kiến thức trong tuần.<br>- Tổng hợp Amazon ECS và CI/CD.<br>- Sắp xếp ghi chú học tập. | 30/05/2026 | 30/05/2026 | https://cloudjourney.awsstudygroup.com/ |
 
 ### Kết quả đạt được tuần 8:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Tìm hiểu Amazon ECS:
+  * Hiểu mục đích của điều phối Container.
+  * Tìm hiểu kiến trúc cơ bản của ECS.
+  * Tìm hiểu các trường hợp sử dụng phổ biến của ECS.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Tìm hiểu các thành phần của Amazon ECS:
+  * Clusters.
+  * Services.
+  * Task Definitions.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Thực hành Amazon ECS:
+  * Khám phá giao diện ECS.
+  * Tìm hiểu quy trình triển khai.
+  * Làm quen với các tài nguyên ECS cơ bản.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Tìm hiểu các khái niệm về CI/CD:
+  * Hiểu Continuous Integration.
+  * Hiểu Continuous Deployment.
+  * Tìm hiểu các khái niệm cơ bản về tự động hóa triển khai.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Tìm hiểu AWS CodePipeline:
+  * Tìm hiểu các giai đoạn Source, Build và Deploy.
+  * Hiểu cách Deployment Pipeline hoạt động.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Tìm hiểu tích hợp GitHub:
+  * Tìm hiểu các khái niệm về quản lý phiên bản.
+  * Hiểu cách GitHub tích hợp với AWS CodePipeline.
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Củng cố kiến thức về Amazon ECS, CI/CD và tự động hóa triển khai.
