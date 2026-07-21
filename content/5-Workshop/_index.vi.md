@@ -1,33 +1,37 @@
 ---
 title: "Workshop"
-date: 2024-01-01
+date: 2026-01-01
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-
-# Đảm bảo truy cập Hybrid an toàn đến S3 bằng cách sử dụng VPC endpoint
+# Triển khai Nền tảng Mua bán Đồ cũ trên AWS
 
 #### Tổng quan
 
-**AWS PrivateLink** cung cấp kết nối riêng tư đến các dịch vụ aws từ VPCs hoặc trung tâm dữ liệu (on-premise) mà không làm lộ lưu lượng truy cập ra ngoài public internet.
+Trong workshop này, chúng ta sẽ xây dựng và triển khai **Nền tảng Mua bán Đồ cũ** trên AWS bằng kiến trúc cloud-native.
 
-Trong bài lab này, chúng ta sẽ học cách tạo, cấu hình, và kiểm tra VPC endpoints để cho phép workload của bạn tiếp cận các dịch vụ AWS mà không cần đi qua Internet công cộng.
+Hệ thống sử dụng các dịch vụ AWS bao gồm **Amazon ECS Fargate**, **Amazon ECR**, **Amazon S3**, **AWS CodeBuild**, **Application Load Balancer**, **Amazon CloudWatch**, **AWS IAM**, kết hợp với **MongoDB Atlas** để xây dựng một hệ thống có khả năng mở rộng, bảo mật và triển khai tự động.
 
-Chúng ta sẽ tạo hai loại endpoints để truy cập đến Amazon S3: gateway vpc endpoint và interface vpc endpoint. Hai loại vpc endpoints này mang đến nhiều lợi ích tùy thuộc vào việc bạn truy cập đến S3 từ môi trường cloud hay từ trung tâm dữ liệu (on-premise).
-+ **Gateway** - Tạo gateway endpoint để gửi lưu lượng đến Amazon S3 hoặc DynamoDB using private IP addresses. Bạn điều hướng lưu lượng từ VPC của bạn đến gateway endpoint bằng các bảng định tuyến (route tables)
-+ **Interface** - Tạo interface endpoint để gửi lưu lượng đến các dịch vụ điểm cuối (endpoints) sử dụng Network Load Balancer để phân phối lưu lượng. Lưu lượng dành cho dịch vụ điểm cuối được resolved bằng DNS.
+Trong workshop này, bạn sẽ từng bước chuẩn bị môi trường, cấu hình các dịch vụ AWS, đóng gói ứng dụng bằng Docker, triển khai ứng dụng lên Amazon ECS Fargate, thiết lập quy trình CI/CD và giám sát hệ thống.
 
 #### Nội dung
 
 1. [Tổng quan về workshop](5.1-Workshop-overview/)
-2. [Chuẩn bị](5.2-Prerequiste/)
-3. [Truy cập đến S3 từ VPC](5.3-S3-vpc/)
-4. [Truy cập đến S3 từ TTDL On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (làm thêm)](5.5-Policy/)
-6. [Dọn dẹp tài nguyên](5.6-Cleanup/)
+2. [Điều kiện tiên quyết](5.2-Prerequisite/)
+3. [Chuẩn bị nền tảng dự án](5.3-Project-foundation/)
+4. [Cấu hình mạng VPC](5.4-VPC/)
+5. [Cấu hình MongoDB Atlas](5.5-MongoDB-Atlas/)
+6. [Tích hợp Amazon S3](5.6-Amazon-S3/)
+7. [Quản lý thông tin bí mật với AWS Secrets Manager](5.7-Secrets-Manager/)
+8. [Đóng gói ứng dụng bằng Docker](5.8-Docker/)
+9. [Đẩy Docker image lên Amazon ECR](5.9-Amazon-ECR/)
+10. [Triển khai ứng dụng trên Amazon ECS Fargate](5.10-Amazon-ECS/)
+11. [Cấu hình Application Load Balancer](5.11-Application-Load-Balancer/)
+12. [Cấu hình Amazon Route 53 và AWS Certificate Manager](5.12-Route53-ACM/)
+13. [Thiết lập quy trình CI/CD](5.13-CICD/)
+14. [Giám sát và thông báo](5.14-Monitoring/)
+15. [Kiểm thử toàn bộ hệ thống](5.15-Testing/)
+16. [Dọn dẹp tài nguyên](5.16-Cleanup/)

@@ -1,31 +1,37 @@
 ---
 title: "Workshop"
-date: 2024-01-01
+date: 2026-01-01
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# Secure Hybrid Access to S3 using VPC Endpoints
+
+# Deploying a Second-Hand Marketplace Platform on AWS
 
 #### Overview
 
-**AWS PrivateLink** provides private connectivity to AWS services from VPCs and your on-premises networks, without exposing your traffic to the Public Internet.
+In this workshop, we will build and deploy a **Second-Hand Marketplace Platform** using a cloud-native architecture on AWS.
 
-In this lab, you will learn how to create, configure, and test VPC endpoints that enable your workloads to reach AWS services without traversing the Public Internet.
+The solution leverages AWS managed services including **Amazon ECS Fargate**, **Amazon ECR**, **Amazon S3**, **AWS CodeBuild**, **Application Load Balancer**, **Amazon CloudWatch**, **AWS IAM**, **AWS Secrets Manager**, **Amazon Route 53**, and **AWS Certificate Manager (ACM)**, integrated with **MongoDB Atlas** to provide a scalable, secure, highly available, and automated deployment platform.
 
-You will create two types of endpoints to access Amazon S3: a Gateway VPC endpoint, and an Interface VPC endpoint. These two types of VPC endpoints offer different benefits depending on if you are accessing Amazon S3 from the cloud or your on-premises location
-+ **Gateway** - Create a gateway endpoint to send traffic to Amazon S3 or DynamoDB using private IP addresses.You route traffic from your VPC to the gateway endpoint using route tables.
-+ **Interface** - Create an interface endpoint to send traffic to endpoint services that use a Network Load Balancer to distribute traffic. Traffic destined for the endpoint service is resolved using DNS.
+Throughout this workshop, you will prepare the project environment, configure AWS infrastructure, integrate external services, containerize the application using Docker, deploy it to Amazon ECS Fargate, configure CI/CD, monitor system performance, and perform end-to-end testing.
 
 #### Content
 
-1. [Workshop overview](5.1-Workshop-overview)
-2. [Prerequiste](5.2-Prerequiste/)
-3. [Access S3 from VPC](5.3-S3-vpc/)
-4. [Access S3 from On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (Bonus)](5.5-Policy/)
-6. [Clean up](5.6-Cleanup/)
+1. [Workshop overview](5.1-Workshop-overview/)
+2. [Prerequisite](5.2-Prerequisite/)
+3. [Prepare project foundation](5.3-Project-foundation/)
+4. [Configure VPC networking](5.4-VPC/)
+5. [Configure MongoDB Atlas](5.5-MongoDB-Atlas/)
+6. [Integrate Amazon S3](5.6-Amazon-S3/)
+7. [Manage secrets with AWS Secrets Manager](5.7-Secrets-Manager/)
+8. [Dockerize the application](5.8-Docker/)
+9. [Push Docker image to Amazon ECR](5.9-Amazon-ECR/)
+10. [Deploy the application on Amazon ECS Fargate](5.10-Amazon-ECS/)
+11. [Configure Application Load Balancer](5.11-Application-Load-Balancer/)
+12. [Configure Amazon Route 53 and AWS Certificate Manager](5.12-Route53-ACM/)
+13. [Configure CI/CD](5.13-CICD/)
+14. [Monitoring and notifications](5.14-Monitoring/)
+15. [End-to-end testing](5.15-Testing/)
+16. [Clean up resources](5.16-Cleanup/)
