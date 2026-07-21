@@ -7,7 +7,6 @@ pre: " <b> 7. </b> "
 ---
 
 
-# Sharing and Feedback
 
 ## Overall Evaluation
 

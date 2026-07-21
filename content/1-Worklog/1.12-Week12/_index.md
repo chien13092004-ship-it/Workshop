@@ -15,11 +15,11 @@ pre: " <b> 1.12. </b> "
 
 | Day | Task | Start Date | Completion Date |
 | --- | ---- | ---------- | --------------- |
-| 2 | Containerize the application using Docker | 10/27/2025 | 10/27/2025 |
-| 3 | Push Docker Image to Amazon ECR | 10/28/2025 | 10/28/2025 |
-| 4 | Deploy the application to Amazon ECS Fargate | 10/29/2025 | 10/29/2025 |
-| 5 | Configure Application Load Balancer, Route 53 and ACM | 10/30/2025 | 10/30/2025 |
-| 6 | Configure AWS CodeBuild, monitor the system with CloudWatch, perform testing and complete the project | 10/31/2025 | 10/31/2025 |
+| 2 | Containerize the application using Docker | 21/06/2026 | 21/06/2026 |
+| 3 | Push Docker Image to Amazon ECR | 22/06/2026 | 22/06/2026 |
+| 4 | Deploy the application to Amazon ECS Fargate | 23/06/2026 | 23/06/2026 |
+| 5 | Configure Application Load Balancer, Route 53 and ACM | 24/06/2026 | 24/06/2026 |
+| 6 | Configure AWS CodeBuild, monitor the system with CloudWatch, perform testing and complete the project | 25/06/2026 | 26/06/2026 |
 
 ### Week 12 Achievements:
 

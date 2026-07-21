@@ -6,7 +6,6 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
-# Self Assessment
 
 During my participation in the First Cloud AI Journey (FCAJ) program, I gained valuable knowledge through AWS learning materials, hands-on labs, technical workshops, blog research, and weekly worklogs.
 

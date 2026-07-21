@@ -16,11 +16,11 @@ pre: " <b> 1.11. </b> "
 
 | Day | Task | Start Date | Completion Date |
 | --- | ---- | ---------- | --------------- |
-| 2 | Discuss and select the internship project topic | 10/20/2025 | 10/20/2025 |
-| 3 | Analyze system requirements and define user roles | 10/21/2025 | 10/21/2025 |
-| 4 | Design database structure and application architecture | 10/22/2025 | 10/22/2025 |
-| 5 | Develop user authentication, product management, and order management modules | 10/23/2025 | 10/24/2025 |
-| 6 | Integrate MongoDB Atlas and Amazon S3 for data and image storage | 10/24/2025 | 10/24/2025 |
+| 2 | Discuss and select the internship project topic | 14/06/2026 | 14/06/2026 |
+| 3 | Analyze system requirements and define user roles | 15/06/2026 | 15/06/2026 |
+| 4 | Design database structure and application architecture | 16/06/2026 | 16/06/2026 |
+| 5 | Develop user authentication, product management, and order management modules | 17/06/2026 | 18/06/2026 |
+| 6 | Integrate MongoDB Atlas and Amazon S3 for data and image storage | 19/06/2026 | 19/06/2026 |
 
 ### Week 11 Achievements:
 
