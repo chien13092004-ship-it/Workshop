@@ -1,67 +1,67 @@
 ---
-title : "Tạo VPC"
+title : "Create VPC"
 date : 2026-01-01
 weight : 1
 chapter : false
 pre : " <b> 5.4.1. </b> "
 ---
 
-## Tạo VPC
+## Create VPC
 
-Trong phần này, bạn sẽ tạo một **Virtual Private Cloud (VPC)** để xây dựng môi trường mạng riêng cho ứng dụng trên AWS.
+In this section, you will create a Virtual Private Cloud (VPC), which provides an isolated networking environment for deploying the application on AWS.
 
-VPC là nền tảng của toàn bộ hạ tầng mạng. Tất cả các tài nguyên như Subnet, Route Table, Internet Gateway, NAT Gateway, Application Load Balancer và Amazon ECS sẽ được triển khai bên trong VPC này.
+The VPC serves as the foundation of the entire infrastructure. All networking resources, including subnets, route tables, Internet Gateway, NAT Gateway, Application Load Balancer, and Amazon ECS, will be deployed inside this VPC.
 
 ---
 
-## Tạo Virtual Private Cloud
+## Create a Virtual Private Cloud
 
-Truy cập:
+Navigate to:
 
 **AWS Console → VPC → Your VPCs → Create VPC**
 
-Chọn **VPC only**, sau đó cấu hình như sau:
+Select **VPC only**, then configure the following settings:
 
-| Thuộc tính | Giá trị |
-|------------|----------|
-| Tài nguyên cần tạo | VPC only |
-| Tên | production-vpc |
+| Property | Value |
+|----------|-------|
+| Resources to create | VPC only |
+| Name tag | production-vpc |
 | IPv4 CIDR | 10.0.0.0/16 |
 | IPv6 CIDR | None |
 | Tenancy | Default |
 
-Kiểm tra lại cấu hình và chọn **Create VPC**.
+Review the configuration and choose **Create VPC**.
 
 ![Create VPC](/images/5-Workshop/5.4-Networking/create-vpc.png)
 
 ---
 
-## Kiểm tra VPC
+## Verify the VPC
 
-Truy cập:
+Navigate to:
 
 **AWS Console → VPC → Your VPCs**
 
-Chọn **production-vpc** và kiểm tra các thông tin sau:
+Select **production-vpc** and verify the following settings:
 
-| Thuộc tính | Giá trị mong đợi |
-|------------|------------------|
-| Trạng thái | Available |
+| Property | Expected Value |
+|----------|----------------|
+| State | Available |
 | IPv4 CIDR | 10.0.0.0/16 |
 | DNS Resolution | Enabled |
 | DNS Hostnames | Enabled |
 
-Xác nhận VPC đã được tạo thành công trước khi chuyển sang bước cấu hình mạng.
+Confirm that the VPC has been created successfully before proceeding to the networking configuration.
 
 ![VPC Details](/images/5-Workshop/5.4-Networking/vpc-details.png)
 
 ---
 
-## Kết quả mong đợi
+## Expected Result
 
-Sau khi hoàn thành phần này, bạn sẽ có:
+After completing this section, you will have:
 
-- Một Virtual Private Cloud tên **production-vpc**.
-- Môi trường mạng riêng với dải địa chỉ **10.0.0.0/16**.
-- DNS Resolution và DNS Hostnames được bật.
-- VPC sẵn sàng để cấu hình Subnet và các tài nguyên mạng ở bước tiếp theo.
+- A Virtual Private Cloud named **production-vpc**.
+- A private networking environment with the IPv4 CIDR block **10.0.0.0/16**.
+- DNS Resolution and DNS Hostnames enabled.
+- A VPC ready for configuring subnets and networking resources.

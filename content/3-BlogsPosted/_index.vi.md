@@ -1,20 +1,20 @@
 ---
-title: "Blog Posted"
+title: "Bài viết đã đăng"
 date: 2026-07-21
 weight: 3
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
 
-# BLOG POSTED
 
-During my AWS learning journey, I read and summarized several AWS technical blogs to better understand cloud architecture, security, AI, and automation.
+# BÀI VIẾT ĐÃ ĐĂNG
 
-Each article highlights an AWS solution, explains the architecture, summarizes the key services involved, and describes what I learned.
+Trong quá trình học AWS, tôi đã đọc và tóm tắt nhiều bài viết kỹ thuật nhằm hiểu rõ hơn về kiến trúc đám mây, bảo mật, AI và tự động hóa trên AWS.
 
-## Blog List
+Mỗi bài viết giới thiệu một giải pháp AWS, giải thích kiến trúc hệ thống, các dịch vụ được sử dụng và những kiến thức tôi học được.
 
-- Blog 1 – Session Policies in Amazon EKS Pod Identity
-- Blog 2 – Automating Contract Intelligence with Doczy.ai on AWS
-- Blog 3 – Scale AWS Storage Gateway Migration with Infrastructure as Code
+## Danh sách bài viết
 
+- Blog 1 – Session Policies trong Amazon EKS Pod Identity
+- Blog 2 – Tự động hóa phân tích hợp đồng với Doczy.ai trên AWS
+- Blog 3 – Tự động hóa nâng cấp AWS Storage Gateway bằng Infrastructure as Code
