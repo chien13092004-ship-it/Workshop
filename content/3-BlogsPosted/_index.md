@@ -1,7 +1,7 @@
 ---
 title: "Blog Posted"
 date: 2026-07-21
-weight: 3
+weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
@@ -17,4 +17,3 @@ Each article highlights an AWS solution, explains the architecture, summarizes t
 - Blog 1 – Session Policies in Amazon EKS Pod Identity
 - Blog 2 – Automating Contract Intelligence with Doczy.ai on AWS
 - Blog 3 – Scale AWS Storage Gateway Migration with Infrastructure as Code
-    

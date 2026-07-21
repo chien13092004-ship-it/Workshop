@@ -1,7 +1,7 @@
 ---
 title: "Bài viết đã đăng"
 date: 2026-07-21
-weight: 3
+weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---

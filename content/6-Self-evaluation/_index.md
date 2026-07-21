@@ -1,7 +1,7 @@
 ---
 title: "Self Assessment"
 date: 2026-07-22
-weight: 6
+weight: 1
 chapter: false
 pre: " <b> 6. </b> "
 ---

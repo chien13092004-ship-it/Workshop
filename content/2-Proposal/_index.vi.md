@@ -43,7 +43,7 @@ Nền tảng giúp giảm đáng kể thời gian triển khai thông qua quy tr
 
 ## Kiến trúc giải pháp
 
-![System Architecture](/images/2-Proposal/system_architecture.png)
+![System Architecture](/images/2-Proposal/system_architecture.jpg)
 
 ### Các dịch vụ AWS được sử dụng
 
