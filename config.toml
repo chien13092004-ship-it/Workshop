@@ -1,6 +1,6 @@
 baseURL = "https://chien13092004-ship-it.github.io/Workshop/"
-relativeURLs = false
-canonifyURLs = false
+relativeURLs = true
+canonifyURLs = true
 defaultContentLanguage = "en"
 
 # Change the default theme to be use when building the site with Hugo
