@@ -1,43 +1,83 @@
 ---
-title : "Networking"
+title : "Prepare Project"
 date : 2026-01-01
-weight : 4
+weight : 1
 chapter : false
-pre : " <b> 5.4. </b> "
+pre : " <b> 5.3.1. </b> "
 ---
 
-### Goal
+## Prepare Project
 
-Build the networking infrastructure required to deploy the Second-Hand Marketplace application securely on AWS.
-
----
-
-## 1. Overview
-
-Networking is the foundation of the cloud infrastructure. In this chapter, you will create a Virtual Private Cloud (VPC) and configure the networking components required to support the application deployment.
-
-The network architecture includes public and private subnets, an Internet Gateway, a NAT Gateway, route tables, and security groups. These components provide secure communication between the Application Load Balancer, Amazon ECS, AWS services, and external resources such as MongoDB Atlas.
+In this section, you will prepare the application source code before deploying it to AWS. This includes cloning the repository, installing the required dependencies, configuring the environment variables, and verifying that the application runs successfully in the local environment.
 
 ---
 
+## Clone the Repository
+
+Clone the project source code from GitHub.
+
+```bash
+git clone <repository-url>
+cd <project-folder>
+```
+
 ---
 
-## 3. Detailed Practice Content
+## Install Dependencies
 
-Complete the following sections in order:
+Install all required Node.js packages.
 
-- **5.4.1 Create VPC**
-- **5.4.2 Configure Network**
+```bash
+npm install
+```
+
+Wait until the installation completes successfully.
 
 ---
 
-## 4. Expected Result
+## Configure Environment Variables
 
-After completing this chapter, you will have:
+Create a `.env` file in the project root directory and configure the required environment variables.
 
-- A Virtual Private Cloud (VPC) created.
-- Public and private subnets configured.
-- Internet Gateway and NAT Gateway configured.
-- Route tables configured correctly.
-- Security Groups configured for the Application Load Balancer and Amazon ECS.
-- A networking environment ready for application deployment.
+Example:
+
+```text
+PORT=3000
+MONGODB_URI=<your-mongodb-uri>
+SESSION_SECRET=<your-session-secret>
+AWS_REGION=ap-southeast-1
+AWS_S3_BUCKET=<your-s3-bucket>
+AWS_ACCESS_KEY_ID=<your-access-key>
+AWS_SECRET_ACCESS_KEY=<your-secret-key>
+```
+
+![Configure Environment Variables](/images/5-Workshop/5.3-Project-foundation/env-file.png)
+
+---
+
+## Run the Application
+
+Start the application.
+
+```bash
+npm start
+```
+
+If the application starts successfully, open your browser and navigate to:
+
+```text
+http://localhost:3000
+```
+
+![Run the Application](/images/5-Workshop/5.3-Project-foundation/run-localhost.png)
+
+---
+
+## Expected Result
+
+After completing this section, you should have:
+
+- Project source code cloned successfully.
+- Required dependencies installed.
+- Environment variables configured.
+- Application running successfully in the local environment.

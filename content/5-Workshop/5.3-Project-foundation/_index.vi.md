@@ -1,43 +1,83 @@
 ---
-title : "Hạ tầng mạng"
+title : "Chuẩn bị dự án"
 date : 2026-01-01
-weight : 4
+weight : 1
 chapter : false
-pre : " <b> 5.4. </b> "
+pre : " <b> 5.3.1. </b> "
 ---
 
-### Mục tiêu
+## Chuẩn bị dự án
 
-Xây dựng hạ tầng mạng cần thiết để triển khai ứng dụng Second-Hand Marketplace một cách an toàn trên AWS.
-
----
-
-## 1. Tổng quan
-
-Hạ tầng mạng là nền tảng của toàn bộ hệ thống trên đám mây. Trong chương này, bạn sẽ tạo Virtual Private Cloud (VPC) và cấu hình các thành phần mạng cần thiết để triển khai ứng dụng.
-
-Kiến trúc mạng bao gồm Public Subnet, Private Subnet, Internet Gateway, NAT Gateway, Route Table và Security Group. Các thành phần này giúp Application Load Balancer, Amazon ECS, các dịch vụ AWS và dịch vụ bên ngoài như MongoDB Atlas có thể giao tiếp an toàn với nhau.
+Trong phần này, bạn sẽ chuẩn bị mã nguồn ứng dụng trước khi triển khai lên AWS. Bao gồm tải mã nguồn, cài đặt các thư viện cần thiết, cấu hình biến môi trường và kiểm tra ứng dụng có thể chạy thành công trên môi trường cục bộ.
 
 ---
 
+## Tải mã nguồn
+
+Clone mã nguồn dự án từ GitHub.
+
+```bash
+git clone <repository-url>
+cd <project-folder>
+```
+
 ---
 
-## 2. Nội dung thực hành
+## Cài đặt thư viện
 
-Thực hiện lần lượt các phần sau:
+Cài đặt tất cả các thư viện cần thiết cho dự án.
 
-- **5.4.1 Tạo VPC**
-- **5.4.2 Cấu hình mạng**
+```bash
+npm install
+```
+
+Đợi quá trình cài đặt hoàn tất.
 
 ---
 
-## 3. Kết quả mong đợi
+## Cấu hình biến môi trường
 
-Sau khi hoàn thành chương này, bạn sẽ có:
+Tạo tệp `.env` trong thư mục gốc của dự án và cấu hình các biến môi trường cần thiết.
 
-- Một Virtual Private Cloud (VPC) được tạo thành công.
-- Public Subnet và Private Subnet được cấu hình.
-- Internet Gateway và NAT Gateway được thiết lập.
-- Route Table được cấu hình chính xác.
-- Security Group cho Application Load Balancer và Amazon ECS được thiết lập.
-- Hạ tầng mạng sẵn sàng cho việc triển khai ứng dụng.
+Ví dụ:
+
+```text
+PORT=3000
+MONGODB_URI=<your-mongodb-uri>
+SESSION_SECRET=<your-session-secret>
+AWS_REGION=ap-southeast-1
+AWS_S3_BUCKET=<your-s3-bucket>
+AWS_ACCESS_KEY_ID=<your-access-key>
+AWS_SECRET_ACCESS_KEY=<your-secret-key>
+```
+
+![Cấu hình biến môi trường](/images/5-Workshop/5.3-Project-foundation/env-file.png)
+
+---
+
+## Chạy ứng dụng
+
+Khởi động ứng dụng.
+
+```bash
+npm start
+```
+
+Sau khi ứng dụng khởi động thành công, mở trình duyệt và truy cập:
+
+```text
+http://localhost:3000
+```
+
+![Chạy ứng dụng](/images/5-Workshop/5.3-Project-foundation/run-localhost.png)
+
+---
+
+## Kết quả mong đợi
+
+Sau khi hoàn thành phần này, bạn sẽ:
+
+- Tải thành công mã nguồn dự án.
+- Cài đặt đầy đủ các thư viện cần thiết.
+- Cấu hình thành công các biến môi trường.
+- Chạy thành công ứng dụng trên môi trường cục bộ.
