@@ -1,46 +1,34 @@
 ---
-title: "Các events đã tham gia"
+title: "Blog 1"
 date: 2024-01-01
-weight: 4
+weight: 1
 chapter: false
-pre: " <b> 4. </b> "
+pre: " <b> 3.1. </b> "
 ---
+# SỰ KIỆN ĐÃ THAM GIA
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+Trong quá trình học tập và tìm hiểu về AWS Cloud, tôi đã tham gia nhiều sự kiện và hội thảo kỹ thuật do cộng đồng AWS tổ chức. Những sự kiện này giúp tôi có cơ hội học hỏi từ các chuyên gia trong ngành, cập nhật các công nghệ điện toán đám mây mới và kết nối với những người có cùng đam mê về Cloud.
 
-> Trong phần này, các bạn cần liệt kê và mô tả chi tiết các sự kiện (event) mà mình đã tham gia trong suốt quá trình thực tập hoặc làm việc. 
-> 
-> Mỗi sự kiện nên được trình bày theo định dạng Event 1, Event 2, Event 3…, kèm theo các thông tin:
-> * Tên sự kiện
-> * Thời gian tổ chức
-> * Địa điểm (nếu có)
-> * Vai trò của bạn trong sự kiện (người tham dự, hỗ trợ tổ chức, diễn giả, v.v.)
-> * Mô tả ngắn gọn nội dung và hoạt động chính trong sự kiện
-> * Kết quả hoặc giá trị đạt được (bài học, kỹ năng mới, đóng góp cho nhóm/dự án)
-> * Việc liệt kê này giúp thể hiện rõ sự tham gia thực tế của bạn, cũng như các kỹ năng mềm và kinh nghiệm bạn đã tích lũy qua từng sự kiện.
+Những kiến thức và trải nghiệm tôi nhận được bao gồm:
 
+* Tìm hiểu về các dịch vụ và công nghệ mới trên AWS.
+* Hiểu thêm về kiến trúc hệ thống và các giải pháp triển khai trong thực tế.
+* Lắng nghe chia sẻ kinh nghiệm từ các chuyên gia và diễn giả AWS.
+* Nâng cao kiến thức thực hành thông qua các buổi workshop kỹ thuật.
+* Giao lưu, trao đổi kinh nghiệm với cộng đồng yêu thích AWS.
+* Củng cố kiến thức về điện toán đám mây và định hướng phát triển nghề nghiệp.
 
-Trong quá trình thực tập, em đã tham gia 2 events, với mỗi event là một trải nghiệm đáng nhớ với những kiến thức mới, hay và bổ ích, cùng với đó là nhứng món quà và những khoảnh khắc rất tuyệt vời.
+Các trang tiếp theo sẽ trình bày chi tiết từng sự kiện, bao gồm:
 
-### [Event 1](4.1-Event1/)
-&emsp;**Tên sự kiện:** GenAI-powered App-DB Modernization workshop
+* Mục tiêu của sự kiện
+* Nội dung các phiên chia sẻ
+* Những điểm nổi bật
+* Kiến thức tiếp thu được
+* Cảm nhận cá nhân
+* Hình ảnh của sự kiện
 
-&emsp;**Thời gian:** 09:00 ngày 13/08/2025
+## Danh sách sự kiện
 
-&emsp;**Địa điểm:** Tầng 26, tòa nhà Bitexco, số 02 đường Hải Triều, phường Sài Gòn, thành phố Hồ Chí Minh
-
-&emsp;**Vai trò trong sự kiện:** Người tham dự 
-
-
-
-### [Event 2](4.2-Event2/)
-&emsp;**Tên sự kiện:** GenAI-powered App-DB Modernization workshop
-
-&emsp;**Thời gian:** 09:00 ngày 13/08/2025
-
-&emsp;**Địa điểm:** Tầng 26, tòa nhà Bitexco, số 02 đường Hải Triều, phường Sài Gòn, thành phố Hồ Chí Minh
-
-&emsp;**Vai trò trong sự kiện:** Người tham dự 
-
+* Sự kiện 1 – FCAJ Community Day
+* Sự kiện 2 – AWS Workshop
+* Sự kiện 3 – FCAJ Community Day

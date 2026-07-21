@@ -1,20 +1,102 @@
 ---
-title : "Access S3 from on-premises"
-date : 2024-01-01
-weight : 4
+title : "Configure AWS CodeBuild"
+date : 2026-01-01
+weight : 1
 chapter : false
-pre : " <b> 5.4. </b> "
+pre : " <b> 5.9.1. </b> "
 ---
 
-#### Overview
+## Configure AWS CodeBuild
 
-+ In this section, you will create an Interface endpoint to access Amazon S3 from a simulated on-premises environment. The Interface endpoint will allow you to route to Amazon S3 over a VPN connection from your simulated on-premises environment.
+In this section, you will configure AWS CodeBuild to automate the build process of the Second-Hand Marketplace application.
 
-+ Why using **Interface endpoint**: 
-    + Gateway endpoints only work with resources running in the VPC where they are created. Interface endpoints work with resources running in VPC, and also resources running in on-premises environments. Connectivty from your on-premises environment to the cloud can be provided by AWS Site-to-Site VPN or AWS Direct Connect.
-    + Interface endpoints allow you to connect to services powered by AWS PrivateLink. These services include some AWS services, services hosted by other AWS customers and partners in their own VPCs (referred to as PrivateLink Endpoint Services), and supported AWS Marketplace Partner services. For this workshop, we will focus on connecting to Amazon S3.
+AWS CodeBuild retrieves the application source code from GitHub, executes the build commands defined in the `buildspec.yml` file, builds the Docker image, and pushes the image to Amazon Elastic Container Registry (Amazon ECR).
 
-![Interface endpoint architecture](/images/5-Workshop/5.4-S3-onprem/diagram3.png)
+---
 
+## Create a CodeBuild Project
 
+Navigate to:
 
+**AWS Console → AWS CodeBuild → Build projects → Create build project**
+
+Configure the project using the following settings.
+
+| Property | Value |
+|----------|-------|
+| Project name | wed-mbdc-build |
+| Source provider | GitHub |
+| Repository | Your GitHub repository |
+
+Choose **Next** to continue.
+
+![Create Project](/images/5-Workshop/5.9-CI-CD/create-project.png)
+
+---
+
+## Configure the Build Environment
+
+Configure the build environment.
+
+| Property | Value |
+|----------|-------|
+| Environment image | Managed image |
+| Operating system | Ubuntu |
+| Runtime | Standard |
+| Privileged mode | Enabled |
+
+Enable **Privileged mode** to allow Docker image creation during the build process.
+
+![Build Environment](/images/5-Workshop/5.9-CI-CD/build-environment.png)
+
+---
+
+## Configure the Build Specification
+
+The project uses a `buildspec.yml` file stored in the source repository.
+
+The build specification defines the commands required to:
+
+- Authenticate with Amazon ECR.
+- Build the Docker image.
+- Tag the Docker image.
+- Push the image to Amazon ECR.
+
+![Buildspec](/images/5-Workshop/5.9-CI-CD/buildspec.png)
+
+---
+
+## Start a Build
+
+Open the created CodeBuild project and choose **Start build**.
+
+Wait until the build process finishes successfully.
+
+![Build History](/images/5-Workshop/5.9-CI-CD/build-history.png)
+
+---
+
+## Verify the Build Result
+
+Navigate to:
+
+**AWS Console → CodeBuild → Build history**
+
+Verify that:
+
+- Build status is **Succeeded**.
+- All build phases completed successfully.
+- The Docker image has been pushed to Amazon ECR.
+
+![Build Success](/images/5-Workshop/5.9-CI-CD/build-success.png)
+
+---
+
+## Expected Result
+
+After completing this section, you will have:
+
+- An AWS CodeBuild project connected to GitHub.
+- A successful Docker image build.
+- The Docker image pushed to Amazon ECR.
+- An automated build workflow for the application.

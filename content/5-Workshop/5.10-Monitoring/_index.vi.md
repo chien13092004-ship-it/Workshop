@@ -1,20 +1,37 @@
 ---
-title : "Truy cập S3 từ môi trường truyền thống"
-date : 2024-01-01 
-weight : 4 
+title : "Giám sát hệ thống"
+date : 2026-01-01
+weight : 10
 chapter : false
-pre : " <b> 5.4. </b> "
+pre : " <b> 5.10. </b> "
 ---
 
-#### Tổng quan
+### Mục tiêu
 
-+ Trong phần này, bạn sẽ tạo một Interface Endpoint để truy cập Amazon S3 từ môi trường truyền thống mô phỏng. Interface Endpoint sẽ cho phép bạn định tuyến đến Amazon S3 qua kết nối VPN từ môi trường truyền thống mô phỏng của bạn.
+Giám sát ứng dụng đã triển khai bằng Amazon CloudWatch.
 
-+ Tại sao nên sử dụng **Interface Endpoint**:
-    + Các Gateway endpoints chỉ hoạt động với các tài nguyên đang chạy trong VPC nơi chúng được tạo. Interface Endpoint  hoạt động với tài nguyên chạy trong VPC và cả tài nguyên chạy trong môi trường truyền thống. Khả năng kết nối từ môi trường truyền thống của bạn với aws cloud có thể được cung cấp bởi AWS Site-to-Site VPN hoặc AWS Direct Connect.
-    + Interface Endpoint cho phép bạn kết nối với các dịch vụ do AWS PrivateLink cung cấp. Các dịch vụ này bao gồm một số dịch vụ AWS, dịch vụ do các đối tác và khách hàng AWS lưu trữ trong VPC của riêng họ (gọi tắt là Dịch vụ PrivateLink endpoints) và các dịch vụ Đối tác AWS Marketplace. Đối với workshop này, chúng ta sẽ tập trung vào việc kết nối với Amazon S3.
-    
-![Interface endpoint architecture](/images/5-Workshop/5.4-S3-onprem/diagram3.png)
+---
 
+## 1. Tổng quan
 
+Trong chương này, bạn sẽ sử dụng Amazon CloudWatch để theo dõi trạng thái và hoạt động của ứng dụng sau khi triển khai.
 
+Amazon CloudWatch thu thập log và metric từ Amazon ECS, giúp theo dõi hoạt động của ứng dụng, hỗ trợ xử lý sự cố và xác nhận dịch vụ đang hoạt động bình thường.
+
+---
+
+## 2. Nội dung thực hành
+
+Thực hiện phần sau:
+
+- **5.10.1 Cấu hình Amazon CloudWatch**
+
+---
+
+## 3. Kết quả mong đợi
+
+Sau khi hoàn thành chương này, bạn sẽ có:
+
+- Amazon CloudWatch được kết nối với Amazon ECS.
+- Log của ứng dụng được lưu trong CloudWatch.
+- Khả năng giám sát cơ bản cho ứng dụng đã triển khai.

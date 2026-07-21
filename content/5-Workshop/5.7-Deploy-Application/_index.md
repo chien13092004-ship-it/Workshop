@@ -1,20 +1,43 @@
 ---
-title : "Access S3 from on-premises"
-date : 2024-01-01
-weight : 4
+title : "Deploy Application"
+date : 2026-01-01
+weight : 7
 chapter : false
-pre : " <b> 5.4. </b> "
+pre : " <b> 5.7. </b> "
 ---
 
-#### Overview
+### Goal
 
-+ In this section, you will create an Interface endpoint to access Amazon S3 from a simulated on-premises environment. The Interface endpoint will allow you to route to Amazon S3 over a VPN connection from your simulated on-premises environment.
+Deploy the Second-Hand Marketplace application to Amazon ECS using AWS Fargate.
 
-+ Why using **Interface endpoint**: 
-    + Gateway endpoints only work with resources running in the VPC where they are created. Interface endpoints work with resources running in VPC, and also resources running in on-premises environments. Connectivty from your on-premises environment to the cloud can be provided by AWS Site-to-Site VPN or AWS Direct Connect.
-    + Interface endpoints allow you to connect to services powered by AWS PrivateLink. These services include some AWS services, services hosted by other AWS customers and partners in their own VPCs (referred to as PrivateLink Endpoint Services), and supported AWS Marketplace Partner services. For this workshop, we will focus on connecting to Amazon S3.
+---
 
-![Interface endpoint architecture](/images/5-Workshop/5.4-S3-onprem/diagram3.png)
+## 1. Overview
 
+In this chapter, you will deploy the containerized application to Amazon Elastic Container Service (Amazon ECS).
 
+Amazon ECS manages the application containers, while AWS Fargate provides a serverless compute environment without requiring you to provision or manage EC2 instances.
 
+The deployment includes creating an ECS cluster, configuring a task definition, creating an ECS service, and verifying that the application is running successfully.
+
+---
+
+## 2. Detailed Practice Content
+
+Complete the following sections in order:
+
+- **5.7.1 Create ECS Cluster**
+- **5.7.2 Create Task Definition**
+- **5.7.3 Create ECS Service**
+- **5.7.4 Verify Deployment**
+
+---
+
+## 3. Expected Result
+
+After completing this chapter, you will have:
+
+- An Amazon ECS cluster created.
+- A task definition configured.
+- An ECS service running on AWS Fargate.
+- The application successfully deployed and ready to receive traffic.

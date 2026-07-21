@@ -1,20 +1,40 @@
 ---
-title : "Access S3 from on-premises"
-date : 2024-01-01
-weight : 4
+title : "CI/CD"
+date : 2026-01-01
+weight : 9
 chapter : false
-pre : " <b> 5.4. </b> "
+pre : " <b> 5.9. </b> "
 ---
 
-#### Overview
+### Goal
 
-+ In this section, you will create an Interface endpoint to access Amazon S3 from a simulated on-premises environment. The Interface endpoint will allow you to route to Amazon S3 over a VPN connection from your simulated on-premises environment.
+Configure a Continuous Integration and Continuous Deployment (CI/CD) workflow for the Second-Hand Marketplace application using AWS CodeBuild.
 
-+ Why using **Interface endpoint**: 
-    + Gateway endpoints only work with resources running in the VPC where they are created. Interface endpoints work with resources running in VPC, and also resources running in on-premises environments. Connectivty from your on-premises environment to the cloud can be provided by AWS Site-to-Site VPN or AWS Direct Connect.
-    + Interface endpoints allow you to connect to services powered by AWS PrivateLink. These services include some AWS services, services hosted by other AWS customers and partners in their own VPCs (referred to as PrivateLink Endpoint Services), and supported AWS Marketplace Partner services. For this workshop, we will focus on connecting to Amazon S3.
+---
 
-![Interface endpoint architecture](/images/5-Workshop/5.4-S3-onprem/diagram3.png)
+## 1. Overview
 
+In this chapter, you will configure AWS CodeBuild to automate the build process of the application.
 
+Whenever the project source code is updated in GitHub, AWS CodeBuild builds the Docker image, pushes it to Amazon ECR, and prepares the latest container image for deployment.
 
+This automation reduces manual deployment steps and ensures a consistent build process.
+
+---
+
+## 2. Detailed Practice Content
+
+Complete the following section:
+
+- **5.9.1 Configure AWS CodeBuild**
+
+---
+
+## 3. Expected Result
+
+After completing this chapter, you will have:
+
+- A CodeBuild project connected to GitHub.
+- Docker images automatically built.
+- Docker images pushed to Amazon ECR.
+- A repeatable CI/CD build workflow.

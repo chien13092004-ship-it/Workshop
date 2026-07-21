@@ -1,20 +1,40 @@
 ---
-title : "Access S3 from on-premises"
-date : 2024-01-01
-weight : 4
+title : "Domain and HTTPS"
+date : 2026-01-01
+weight : 8
 chapter : false
-pre : " <b> 5.4. </b> "
+pre : " <b> 5.8. </b> "
 ---
 
-#### Overview
+### Goal
 
-+ In this section, you will create an Interface endpoint to access Amazon S3 from a simulated on-premises environment. The Interface endpoint will allow you to route to Amazon S3 over a VPN connection from your simulated on-premises environment.
+Configure a custom domain and enable HTTPS access for the Second-Hand Marketplace application.
 
-+ Why using **Interface endpoint**: 
-    + Gateway endpoints only work with resources running in the VPC where they are created. Interface endpoints work with resources running in VPC, and also resources running in on-premises environments. Connectivty from your on-premises environment to the cloud can be provided by AWS Site-to-Site VPN or AWS Direct Connect.
-    + Interface endpoints allow you to connect to services powered by AWS PrivateLink. These services include some AWS services, services hosted by other AWS customers and partners in their own VPCs (referred to as PrivateLink Endpoint Services), and supported AWS Marketplace Partner services. For this workshop, we will focus on connecting to Amazon S3.
+---
 
-![Interface endpoint architecture](/images/5-Workshop/5.4-S3-onprem/diagram3.png)
+## 1. Overview
 
+In this chapter, you will configure Amazon Route 53 and AWS Certificate Manager (ACM) to provide secure access to the application.
 
+Amazon Route 53 is used to manage the domain name, while AWS Certificate Manager issues an SSL/TLS certificate that enables HTTPS connections through the Application Load Balancer.
 
+After completing this chapter, users will be able to access the application using a custom domain over HTTPS.
+
+---
+
+## 2. Detailed Practice Content
+
+Complete the following section:
+
+- **5.8.1 Configure Route 53 and AWS Certificate Manager**
+
+---
+
+## 3. Expected Result
+
+After completing this chapter, you will have:
+
+- A custom domain configured in Amazon Route 53.
+- An SSL/TLS certificate issued by AWS Certificate Manager.
+- HTTPS enabled through the Application Load Balancer.
+- Secure access to the deployed application.

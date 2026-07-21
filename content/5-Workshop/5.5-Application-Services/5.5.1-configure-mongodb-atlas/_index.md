@@ -24,7 +24,7 @@ Create a cluster or use an existing cluster for the project.
 
 After the cluster is created, verify that its status is **Available**.
 
-![MongoDB Cluster](/images/5-Workshop/5.5-Application-Services/5.5.1/mongodb-cluster.png)
+![MongoDB Cluster](/images/5-Workshop/5.5-Application-Services/mongodb-cluster.png)
 
 ---
 
@@ -46,7 +46,7 @@ Example configuration:
 
 Save the username and password for later use.
 
-![Database User](/images/5-Workshop/5.5-Application-Services/5.5.1/database-user.png)
+![Database User](/images/5-Workshop/5.5-Application-Services/database-user.png)
 
 ---
 
@@ -66,7 +66,7 @@ For development purposes, you may temporarily allow access from all IP addresses
 
 After deployment, replace this with the appropriate public IP address or CIDR range.
 
-![Network Access](/images/5-Workshop/5.5-Application-Services/5.5.1/network-access.png)
+![Network Access](/images/5-Workshop/5.5-Application-Services/network-access.png)
 
 ---
 
@@ -84,7 +84,7 @@ mongodb+srv://admin:<password>@cluster0.xxxxx.mongodb.net/secondhand
 
 This connection string will be stored securely using AWS Secrets Manager in a later section.
 
-![Connection String](/images/5-Workshop/5.5-Application-Services/5.5.1/connection-string.png)
+![Connection String](/images/5-Workshop/5.5-Application-Services/connection-string.png)
 
 ---
 

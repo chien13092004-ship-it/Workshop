@@ -1,95 +1,93 @@
 ---
-title : "VPC Endpoint Policies"
-date : 2024-01-01
-weight : 5
+title : "Đẩy Image lên Amazon ECR"
+date : 2026-01-01
+weight : 2
 chapter : false
-pre : " <b> 5.5 </b> "
+pre : " <b> 5.6.2. </b> "
 ---
 
-Khi bạn tạo một Interface Endpoint  hoặc cổng, bạn có thể đính kèm một chính sách điểm cuối để kiểm soát quyền truy cập vào dịch vụ mà bạn đang kết nối. Chính sách VPC Endpoint là chính sách tài nguyên IAM mà bạn đính kèm vào điểm cuối. Nếu bạn không đính kèm chính sách khi tạo điểm cuối, thì AWS sẽ đính kèm chính sách mặc định cho bạn để cho phép toàn quyền truy cập vào dịch vụ thông qua điểm cuối.
+## Đẩy Image lên Amazon ECR
 
-Bạn có thể tạo chính sách chỉ hạn chế quyền truy cập vào các S3 bucket cụ thể. Điều này hữu ích nếu bạn chỉ muốn một số Bộ chứa S3 nhất định có thể truy cập được thông qua điểm cuối.
+Trong phần này, bạn sẽ đẩy Docker Image lên Amazon Elastic Container Registry (Amazon ECR).
 
-Trong phần này, bạn sẽ tạo chính sách VPC Endpoint hạn chế quyền truy cập vào S3 bucket được chỉ định trong chính sách VPC Endpoint.
+Amazon ECR là dịch vụ lưu trữ Docker Image được quản lý bởi AWS. Amazon ECS sẽ sử dụng Image này để triển khai ứng dụng ở các bước tiếp theo.
 
-![endpoint diagram](/images/5-Workshop/5.5-Policy/s3-bucket-policy.png)
+---
 
-#### Kết nối tới EC2 và xác minh kết nối tới S3. 
+## Tạo Amazon ECR Repository
 
-1. Bắt đầu một phiên AWS Session Manager mới trên máy chủ có tên là Test-Gateway-Endpoint. Từ phiên này, xác minh rằng bạn có thể liệt kê nội dung của bucket mà bạn đã tạo trong Phần 1: Truy cập S3 từ VPC.
+Truy cập:
 
-```
-aws s3 ls s3://<your-bucket-name>
-```
-![test](/images/5-Workshop/5.5-Policy/test1.png)
+**AWS Console → Amazon ECR → Private repositories → Create repository**
 
-Nội dung của bucket bao gồm hai tệp có dung lượng 1GB đã được tải lên trước đó.
+Cấu hình Repository theo các thông số sau.
 
-2. Tạo một bucket S3 mới; tuân thủ mẫu đặt tên mà bạn đã sử dụng trong Phần 1, nhưng thêm '-2' vào tên. Để các trường khác là mặc định và nhấp vào **Create**.
+| Thuộc tính | Giá trị |
+|------------|----------|
+| Visibility settings | Private |
+| Repository name | secondhand-marketplace |
 
-![create bucket](/images/5-Workshop/5.5-Policy/create-bucket.png)
+Chọn **Create repository**.
 
-3. Tạo bucket thành công.
+![Create Repository](/images/5-Workshop/5.6-Containerization/create-repository.png)
 
-![Success](/images/5-Workshop/5.5-Policy/create-bucket-success.png)
+---
 
-Policy mặc định cho phép truy cập vào tất cả các S3 Buckets thông qua VPC endpoint.
+## Đăng nhập Amazon ECR
 
-4. Trong giao diện **Edit Policy**, sao chép và dán theo policy sau, thay thế yourbucketname-2 với tên bucket thứ hai của bạn. Policy này sẽ cho phép truy cập đến bucket mới thông qua VPC endpoint, nhưng không cho phép truy cập đến các bucket còn lại. Chọn **Save** để kích hoạt policy.
+Mở Terminal và đăng nhập Docker vào Amazon ECR.
 
-
-```
-{
-  "Id": "Policy1631305502445",
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "Stmt1631305501021",
-      "Action": "s3:*",
-      "Effect": "Allow",
-      "Resource": [
-      				"arn:aws:s3:::yourbucketname-2",
-       				"arn:aws:s3:::yourbucketname-2/*"
-       ],
-      "Principal": "*"
-    }
-  ]
-}
+```bash
+aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin <account-id>.dkr.ecr.ap-southeast-1.amazonaws.com
 ```
 
-![custom policy](/images/5-Workshop/5.5-Policy/policy2.png)
+Sau khi đăng nhập thành công, Docker sẽ hiển thị:
 
-Cấu hình policy thành công.
-
-![success](/images/5-Workshop/5.5-Policy/success.png)
-
-5. Từ session của bạn trên Test-Gateway-Endpoint instance, kiểm tra truy cập đến S3 bucket bạn tạo ở bước đầu
-
-```
-aws s3 ls s3://<yourbucketname>
+```text
+Login Succeeded
 ```
 
-Câu lệnh trả về lỗi bởi vì truy cập vào S3 bucket không có quyền trong VPC endpoint policy.
+---
 
-![error](/images/5-Workshop/5.5-Policy/error.png)
+## Tag Docker Image
 
-6. Trở lại home directory của bạn trên EC2 instance ```cd~```
+Gắn thẻ Docker Image bằng địa chỉ Repository của Amazon ECR.
 
-+ Tạo file ```fallocate -l 1G test-bucket2.xyz ```
-+ Sao chép file lên bucket thứ  2 ```aws s3 cp test-bucket2.xyz s3://<your-2nd-bucket-name>```
+```bash
+docker tag secondhand-marketplace:latest <account-id>.dkr.ecr.ap-southeast-1.amazonaws.com/secondhand-marketplace:latest
+```
 
-![success](/images/5-Workshop/5.5-Policy/test2.png)
+---
 
-Thao tác này được cho phép bởi VPC endpoint policy.
+## Đẩy Docker Image lên Amazon ECR
 
-![success](/images/5-Workshop/5.5-Policy/test2-success.png)
+Thực hiện lệnh sau để tải Docker Image lên Repository.
 
-Sau đó chúng ta kiểm tra truy cập vào S3 bucket đầu tiên
+```bash
+docker push <account-id>.dkr.ecr.ap-southeast-1.amazonaws.com/secondhand-marketplace:latest
+```
 
- ```aws s3 cp test-bucket2.xyz s3://<your-1st-bucket-name>```
+Docker sẽ lần lượt tải các lớp (layers) của Image lên Amazon ECR. Thời gian thực hiện phụ thuộc vào kích thước Image và tốc độ mạng.
 
- ![fail](/images/5-Workshop/5.5-Policy/test2-fail.png)
+---
 
- Câu lệnh xảy ra lỗi bởi vì bucket không có quyền truy cập bởi VPC endpoint policy.
+## Kiểm tra Repository
 
-Trong phần này, bạn đã tạo chính sách VPC Endpoint cho Amazon S3 và sử dụng AWS CLI để kiểm tra chính sách. Các hoạt động AWS CLI liên quan đến bucket S3 ban đầu của bạn thất bại vì bạn áp dụng một chính sách chỉ cho phép truy cập đến bucket thứ hai mà bạn đã tạo. Các hoạt động AWS CLI nhắm vào bucket thứ hai của bạn thành công vì chính sách cho phép chúng. Những chính sách này có thể hữu ích trong các tình huống khi bạn cần kiểm soát quyền truy cập vào tài nguyên thông qua VPC Endpoint.
+Truy cập:
+
+**AWS Console → Amazon ECR → Private repositories**
+
+Mở Repository và xác nhận Docker Image đã được tải lên thành công.
+
+![Repository Images](/images/5-Workshop/5.6-Containerization/repository-images.png)
+
+---
+
+## Kết quả mong đợi
+
+Sau khi hoàn thành phần này, bạn sẽ có:
+
+- Một Amazon ECR Repository được tạo.
+- Docker đăng nhập thành công vào Amazon ECR.
+- Docker Image được tải lên Amazon ECR.
+- Docker Image sẵn sàng để triển khai trên Amazon ECS.

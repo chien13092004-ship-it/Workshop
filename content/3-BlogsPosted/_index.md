@@ -1,22 +1,29 @@
 ---
-title: "Blogs Posted"
-date: 2024-01-01
+title: "Blog Posted"
+date: 2026-07-21
 weight: 3
 chapter: false
-pre: " <b> 3. </b> "
+pre: " <b> 3.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
+# BLOG POSTED
 
-This section will list and introduce the blogs you have posted to [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj). For example:
+During my AWS learning journey, I read and summarized several AWS technical blogs to better understand cloud architecture, security, Artificial Intelligence (AI), and automation.
 
-###  [Blog 1 - SESSION POLICIES IN AMAZON EKS POD IDENTITY](3.1-Blog1/)
-This blog introduces the newly added session policies feature in Amazon EKS Pod Identity, which allows you to narrow IAM permissions flexibly and precisely for each pod without needing to create multiple separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+These blog posts introduced practical AWS solutions, explained how different AWS services work together, and demonstrated real-world cloud architectures used by organizations. Reading these technical articles helped me strengthen my understanding of AWS best practices and modern cloud technologies.
 
-###  [Blog 2 - ...](3.2-Blog2/)
-This blog introduces the newly added session policies feature in Amazon EKS Pod Identity, which allows you to narrow IAM permissions flexibly and precisely for each pod without needing to create multiple separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+Key points include:
 
-###  [Blog 3 - ...](3.3-Blog3/)
-This blog introduces the newly added session policies feature in Amazon EKS Pod Identity, which allows you to narrow IAM permissions flexibly and precisely for each pod without needing to create multiple separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+* Understanding real-world AWS architectures and use cases.
+* Learning how AWS services integrate to solve business problems.
+* Exploring cloud security and identity management best practices.
+* Studying AI-powered solutions built on AWS.
+* Understanding automation and Infrastructure as Code (IaC).
+* Improving cloud knowledge through technical documentation and architecture analysis.
+
+The following blogs were studied and summarized:
+
+* Blog 1 – Session Policies in Amazon EKS Pod Identity
+* Blog 2 – Automating Contract Intelligence with Doczy.ai on AWS
+* Blog 3 – Scale AWS Storage Gateway Migration with Infrastructure as Code
+

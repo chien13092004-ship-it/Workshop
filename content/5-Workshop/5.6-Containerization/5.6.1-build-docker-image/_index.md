@@ -1,99 +1,86 @@
 ---
-title : "VPC Endpoint Policies"
-date : 2024-01-01
-weight : 5
+title : "Build Docker Image"
+date : 2026-01-01
+weight : 1
 chapter : false
-pre : " <b> 5.5. </b> "
+pre : " <b> 5.6.1. </b> "
 ---
 
-When you create an interface or gateway endpoint, you can attach an endpoint policy to it that controls access to the service to which you are connecting. A VPC endpoint policy is an IAM resource policy that you attach to an endpoint. If you do not attach a policy when you create an endpoint, AWS attaches a default policy for you that allows full access to the service through the endpoint.
+## Build Docker Image
 
-You can create a policy that restricts access to specific S3 buckets only. This is useful if you only want certain S3 Buckets to be accessible through the endpoint.
+In this section, you will create a Dockerfile and build a Docker image for the Second-Hand Marketplace application.
 
-In this section you will create a VPC endpoint policy that restricts access to the S3 bucket specified in the VPC endpoint policy.
+Docker packages the application and its dependencies into a portable container, ensuring a consistent runtime environment across development and production.
 
-![endpoint diagram](/images/5-Workshop/5.5-Policy/s3-bucket-policy.png)
+---
 
-#### Connect to an EC2 instance and verify connectivity to S3
+## Create the Dockerfile
 
-1. Start a new AWS Session Manager session on the instance named Test-Gateway-Endpoint. From the session, verify that you can list the contents of the bucket you created in Part 1: Access S3 from VPC:
+Open the project folder and create a file named **Dockerfile** in the root directory.
 
-```
-aws s3 ls s3://\<your-bucket-name\>
-```
-![test](/images/5-Workshop/5.5-Policy/test1.png)
+The Dockerfile used in this project is shown below.
 
-The bucket contents include the two 1 GB files uploaded in earlier.
+```dockerfile
+FROM node:20-alpine
 
-2. Create a new S3 bucket; follow the naming pattern you used in Part 1, but add a '-2' to the name. Leave other fields as default and click create
+WORKDIR /app
 
-![create bucket](/images/5-Workshop/5.5-Policy/create-bucket.png)
+COPY package*.json ./
 
-Successfully create bucket
+RUN npm install
 
-![Success](/images/5-Workshop/5.5-Policy/create-bucket-success.png)
+COPY . .
 
-3. Navigate to: Services > VPC > Endpoints, then select the Gateway VPC endpoint you created earlier. Click the Policy tab. Click Edit policy.
+EXPOSE 3000
 
-![policy](/images/5-Workshop/5.5-Policy/policy1.png)
-
-The default policy allows access to all S3 Buckets through the VPC endpoint.
-
-4. In Edit Policy console, copy & Paste the following policy, then replace yourbucketname-2 with your 2nd bucket name. This policy will allow access through the VPC endpoint to your new bucket, but not any other bucket in Amazon S3. Click Save to apply the policy.
-
-```
-{
-  "Id": "Policy1631305502445",
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "Stmt1631305501021",
-      "Action": "s3:*",
-      "Effect": "Allow",
-      "Resource": [
-      				"arn:aws:s3:::yourbucketname-2",
-       				"arn:aws:s3:::yourbucketname-2/*"
-       ],
-      "Principal": "*"
-    }
-  ]
-}
+CMD ["npm", "start"]
 ```
 
-![custom policy](/images/5-Workshop/5.5-Policy/policy2.png)
+Save the Dockerfile after completing the configuration.
 
-Successfully customize policy
+![Dockerfile](/images/5-Workshop/5.6-Containerization/dockerfile.png)
 
-![success](/static/images/5-Workshop/5.5-Policy/success.png)
+---
 
-5. From your session on the Test-Gateway-Endpoint instance, test access to the S3 bucket you created in Part 1: Access S3 from VPC
+## Build the Docker Image
+
+After creating the Dockerfile, open a terminal in the project root directory and build the Docker image.
+
+Run the following command.
+
+```bash
+docker build -t secondhand-marketplace .
 ```
-aws s3 ls s3://<yourbucketname>
+
+Docker performs the following operations during the build process:
+
+1. Downloads the required Node.js base image if it is not available locally.
+2. Creates the application working directory inside the container.
+3. Copies the project files into the container.
+4. Installs all application dependencies using **npm install**.
+5. Packages the application into a Docker image.
+
+When the build completes successfully, Docker displays a message similar to the following.
+
+```text
+Successfully built <IMAGE_ID>
+Successfully tagged secondhand-marketplace:latest
 ```
 
-This command will return an error because access to this bucket is not permitted by your new VPC endpoint policy:
+To verify that the image was created successfully, run:
 
-![error](/static/images/5-Workshop/5.5-Policy/error.png)
+```bash
+docker images
+```
 
-6. Return to your home directory on your EC2 instance ` cd~ `
+The command displays all Docker images stored on the local machine. Confirm that the newly created image appears in the list with the **latest** tag.
 
-+ Create a file ```fallocate -l 1G test-bucket2.xyz ```
-+ Copy file to 2nd bucket ```aws s3 cp test-bucket2.xyz s3://<your-2nd-bucket-name>```
+---
 
-![success](/static/images/5-Workshop/5.5-Policy/test2.png)
+## Expected Result
 
-This operation succeeds because it is permitted by the VPC endpoint policy.
+After completing this section, you will have:
 
-![success](/static/images/5-Workshop/5.5-Policy/test2-success.png)
-
-+ Then we test access to the first bucket by copy the file to 1st bucket `aws s3 cp test-bucket2.xyz s3://<your-1st-bucket-name>`
-
-![fail](/static/images/5-Workshop/5.5-Policy/test2-fail.png)
-
-This command will return an error because access to this bucket is not permitted by your new VPC endpoint policy.
-
-#### Part 3 Summary:
-
-In this section, you created a VPC endpoint policy for Amazon S3, and used the AWS CLI to test the policy. AWS CLI actions targeted to your original S3 bucket failed because you applied a policy that only allowed access to the second bucket you created. AWS CLI actions targeted for your second bucket succeeded because the policy allowed them. These policies can be useful in situations where you need to control access to resources through VPC endpoints.
-
-
+- A Dockerfile created for the application.
+- A Docker image built successfully.
+- A local Docker image ready to be pushed to Amazon ECR.

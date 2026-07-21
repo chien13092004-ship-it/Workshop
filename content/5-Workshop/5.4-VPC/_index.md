@@ -22,7 +22,7 @@ The network architecture includes public and private subnets, an Internet Gatewa
 
 ---
 
-## 3. Detailed Practice Content
+## 2. Detailed Practice Content
 
 Complete the following sections in order:
 
@@ -31,7 +31,7 @@ Complete the following sections in order:
 
 ---
 
-## 4. Expected Result
+## 3. Expected Result
 
 After completing this chapter, you will have:
 

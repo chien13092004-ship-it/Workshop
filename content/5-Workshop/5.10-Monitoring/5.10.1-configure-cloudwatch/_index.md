@@ -1,20 +1,92 @@
 ---
-title : "Access S3 from on-premises"
-date : 2024-01-01
-weight : 4
+title : "Configure Amazon CloudWatch"
+date : 2026-01-01
+weight : 1
 chapter : false
-pre : " <b> 5.4. </b> "
+pre : " <b> 5.10.1. </b> "
 ---
 
-#### Overview
+# Configure Amazon CloudWatch
 
-+ In this section, you will create an Interface endpoint to access Amazon S3 from a simulated on-premises environment. The Interface endpoint will allow you to route to Amazon S3 over a VPN connection from your simulated on-premises environment.
+In this section, you will configure Amazon CloudWatch to monitor the deployed application running on Amazon ECS.
 
-+ Why using **Interface endpoint**: 
-    + Gateway endpoints only work with resources running in the VPC where they are created. Interface endpoints work with resources running in VPC, and also resources running in on-premises environments. Connectivty from your on-premises environment to the cloud can be provided by AWS Site-to-Site VPN or AWS Direct Connect.
-    + Interface endpoints allow you to connect to services powered by AWS PrivateLink. These services include some AWS services, services hosted by other AWS customers and partners in their own VPCs (referred to as PrivateLink Endpoint Services), and supported AWS Marketplace Partner services. For this workshop, we will focus on connecting to Amazon S3.
+Amazon CloudWatch provides monitoring capabilities by collecting metrics from AWS resources and evaluating them against user-defined thresholds. This enables administrators to detect abnormal resource usage, observe application performance, and respond quickly when issues occur.
 
-![Interface endpoint architecture](/images/5-Workshop/5.4-S3-onprem/diagram3.png)
+In this project, CloudWatch is used to monitor the CPU utilization of the ECS Service by creating a CloudWatch Alarm.
 
+---
 
+## Configure CloudWatch Logging
 
+Amazon ECS supports integration with Amazon CloudWatch through the **awslogs** log driver. The Task Definition specifies the CloudWatch Log Group, AWS Region, and Stream Prefix that are used when the container sends runtime logs to CloudWatch.
+
+The following configuration is defined inside the ECS Task Definition.
+
+```json
+"logConfiguration": {
+  "logDriver": "awslogs",
+  "options": {
+    "awslogs-group": "/ecs/wed-mbdc-task",
+    "awslogs-create-group": "true",
+    "awslogs-region": "ap-southeast-1",
+    "awslogs-stream-prefix": "ecs"
+  }
+}
+```
+
+![CloudWatch Logging Configuration](/images/5-Workshop/5.10-Monitoring/ecs-log-configuration.png)
+
+---
+
+## Create a CloudWatch Alarm
+
+To continuously monitor the health of the application, a CloudWatch Alarm is configured for the Amazon ECS Service.
+
+The alarm evaluates the average CPU utilization every five minutes. If the CPU usage exceeds the configured threshold, CloudWatch changes the alarm state from **OK** to **ALARM**, allowing administrators to identify abnormal resource consumption and investigate potential performance issues.
+
+The CloudWatch Alarm is configured using the following settings.
+
+| Property | Value |
+|----------|-------|
+| Alarm name | production-service-cpu-alarm |
+| Namespace | AWS/ECS |
+| Metric | CPUUtilization |
+| Threshold | 80% |
+| Evaluation period | 5 minutes |
+| Cluster | production-cluster |
+| Service | production-service |
+
+![CloudWatch Alarm List](/images/5-Workshop/5.10-Monitoring/cpu-alarm-list.png)
+
+---
+
+## Verify the Alarm Status
+
+After the alarm is created, Amazon CloudWatch continuously monitors the CPU utilization of the ECS Service.
+
+The alarm remains in the **OK** state while CPU usage stays below the configured threshold. If the CPU utilization exceeds 80% during the evaluation period, CloudWatch automatically changes the alarm state to **ALARM**.
+
+The alarm detail page also displays additional monitoring information, including:
+
+- Current alarm state.
+- CPU utilization graph.
+- Threshold configuration.
+- Evaluation period.
+- Cluster name.
+- ECS Service name.
+- Namespace and monitored metric.
+
+This information helps administrators understand the current operating condition of the deployed application and quickly identify potential performance bottlenecks.
+
+![CloudWatch Alarm Details](/images/5-Workshop/5.10-Monitoring/cpu-alarm-details.png)
+
+---
+
+## Expected Result
+
+After completing this section, you will have:
+
+- Amazon ECS configured to use the **awslogs** log driver.
+- A CloudWatch Alarm monitoring CPU utilization for the ECS Service.
+- Real-time visibility into the health of the deployed application.
+- A monitoring mechanism that helps detect abnormal CPU usage and supports application maintenance.

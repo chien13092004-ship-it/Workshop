@@ -1,20 +1,40 @@
 ---
-title : "Truy cập S3 từ môi trường truyền thống"
-date : 2024-01-01 
-weight : 4 
+title : "Đóng gói ứng dụng"
+date : 2026-01-01
+weight : 6
 chapter : false
-pre : " <b> 5.4. </b> "
+pre : " <b> 5.6. </b> "
 ---
 
-#### Tổng quan
+### Mục tiêu
 
-+ Trong phần này, bạn sẽ tạo một Interface Endpoint để truy cập Amazon S3 từ môi trường truyền thống mô phỏng. Interface Endpoint sẽ cho phép bạn định tuyến đến Amazon S3 qua kết nối VPN từ môi trường truyền thống mô phỏng của bạn.
+Đóng gói ứng dụng Second-Hand Marketplace thành Docker container và chuẩn bị image để triển khai trên Amazon ECS.
 
-+ Tại sao nên sử dụng **Interface Endpoint**:
-    + Các Gateway endpoints chỉ hoạt động với các tài nguyên đang chạy trong VPC nơi chúng được tạo. Interface Endpoint  hoạt động với tài nguyên chạy trong VPC và cả tài nguyên chạy trong môi trường truyền thống. Khả năng kết nối từ môi trường truyền thống của bạn với aws cloud có thể được cung cấp bởi AWS Site-to-Site VPN hoặc AWS Direct Connect.
-    + Interface Endpoint cho phép bạn kết nối với các dịch vụ do AWS PrivateLink cung cấp. Các dịch vụ này bao gồm một số dịch vụ AWS, dịch vụ do các đối tác và khách hàng AWS lưu trữ trong VPC của riêng họ (gọi tắt là Dịch vụ PrivateLink endpoints) và các dịch vụ Đối tác AWS Marketplace. Đối với workshop này, chúng ta sẽ tập trung vào việc kết nối với Amazon S3.
-    
-![Interface endpoint architecture](/images/5-Workshop/5.4-S3-onprem/diagram3.png)
+---
 
+## 1. Tổng quan
 
+Trong chương này, bạn sẽ đóng gói ứng dụng Node.js thành Docker container và tải container image lên Amazon Elastic Container Registry (Amazon ECR).
 
+Docker giúp tạo môi trường chạy thống nhất cho ứng dụng, trong khi Amazon ECR lưu trữ container image để sử dụng khi triển khai lên Amazon ECS.
+
+---
+
+## 2. Nội dung thực hành
+
+Thực hiện lần lượt các phần sau:
+
+- **5.6.1 Tạo Dockerfile**
+- **5.6.2 Build Docker Image**
+- **5.6.3 Đẩy Image lên Amazon ECR**
+
+---
+
+## 3. Kết quả mong đợi
+
+Sau khi hoàn thành chương này, bạn sẽ có:
+
+- Dockerfile cho ứng dụng.
+- Docker Image được build thành công.
+- Docker Image được lưu trữ trên Amazon ECR.
+- Docker Image sẵn sàng để triển khai trên Amazon ECS.
