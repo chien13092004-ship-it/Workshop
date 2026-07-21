@@ -1,31 +1,36 @@
 ---
-title: "Blog 1"
-date: 2024-01-01
+title: "Blog 1 - Session Policies in Amazon EKS Pod Identity"
+date: 2026-06-29
 weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
 # SESSION POLICIES IN AMAZON EKS POD IDENTITY
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+Amazon EKS Pod Identity now supports Session Policies, allowing IAM permissions to be restricted for individual pods without creating multiple IAM roles.
 
-Key points to know:
+## Key points to know
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+* Session Policies are inline IAM policies.
+* Permissions are limited by the intersection of the IAM Role and the Session Policy.
+* Session Policies can only reduce permissions.
+* A single IAM Role can be shared across multiple workloads.
+* Helps implement the Principle of Least Privilege.
+* Supports both same-account and cross-account access.
+* Reduces IAM Role management complexity.
+* Can be configured using the AWS Console, CLI or SDK.
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+This feature makes Amazon EKS Pod Identity more secure, scalable and easier to manage in Kubernetes environments.
 
-...Image...
+## Image
 
-...Link...
+![Blog 1](/images/blog1.jpg)
 
-...Guide...
+## Link
+
+https://www.facebook.com/groups/awsstudygroupfcj/permalink/2203023237129303/?rdid=X5P0romMAosoDmk5#
+
+## Guide
+
+https://docs.aws.amazon.com/eks/latest/userguide/pod-identities.html

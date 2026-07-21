@@ -1,58 +1,54 @@
 ---
-title: "Worklog Tuần 12"
-date: 2026-04-12
+title: "Nhật ký công việc tuần 12"
+date: 2026-04-19
 weight: 12
 chapter: false
-pre: " <b> 1.12 </b> "
+pre: " <b> 1.12. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
 ### Mục tiêu tuần 12:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Triển khai ứng dụng lên nền tảng AWS.
+* Kiểm thử môi trường thực tế và hoàn thành đề tài thực tập.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Công việc thực hiện trong tuần:
 
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành |
+| --- | --------- | ------------ | ---------------- |
+| 2 | Đóng gói ứng dụng bằng Docker | 27/10/2025 | 27/10/2025 |
+| 3 | Đẩy Docker Image lên Amazon ECR | 28/10/2025 | 28/10/2025 |
+| 4 | Triển khai ứng dụng lên Amazon ECS Fargate | 29/10/2025 | 29/10/2025 |
+| 5 | Cấu hình Application Load Balancer, Amazon Route 53 và AWS Certificate Manager (ACM) | 30/10/2025 | 30/10/2025 |
+| 6 | Cấu hình AWS CodeBuild, giám sát bằng Amazon CloudWatch, kiểm thử hệ thống và hoàn thiện đề tài | 31/10/2025 | 31/10/2025 |
 
-### Kết quả đạt được tuần 12:
+### Kết quả đạt được trong tuần 12:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Đóng gói thành công ứng dụng bằng Docker.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Đẩy Docker Image lên Amazon ECR thành công.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Triển khai thành công ứng dụng trên Amazon ECS Fargate.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Cấu hình thành công Application Load Balancer để phân phối lưu lượng truy cập.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Cấu hình tên miền bằng Amazon Route 53.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Cấu hình chứng chỉ SSL/TLS bằng AWS Certificate Manager (ACM) để truy cập ứng dụng thông qua HTTPS.
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Thiết lập AWS CodeBuild để tự động hóa quá trình build và triển khai ứng dụng.
 
+* Giám sát hoạt động của hệ thống bằng Amazon CloudWatch.
 
+* Kiểm thử thành công toàn bộ các chức năng của hệ thống gồm:
+  * Trang chủ
+  * Đăng ký tài khoản
+  * Đăng nhập
+  * Quản lý sản phẩm
+  * Mua hàng
+  * Thanh toán
+  * Quản lý đơn hàng
+  * Trang quản trị
+
+* Triển khai thành công website lên môi trường AWS.
+
+* Hoàn thành đề tài thực tập và xác nhận toàn bộ chức năng của ứng dụng hoạt động ổn định trên nền tảng AWS Cloud.

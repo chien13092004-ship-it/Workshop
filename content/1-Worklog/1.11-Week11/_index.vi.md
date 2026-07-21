@@ -1,59 +1,57 @@
 ---
-title: "Worklog Tuần 11"
+title: "Nhật ký công việc tuần 11"
 date: 2026-04-12
 weight: 11
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 11:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Đề xuất và xác định đề tài thực tập.
+* Thiết kế kiến trúc tổng thể và phát triển các chức năng chính của ứng dụng.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Công việc thực hiện trong tuần:
 
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành |
+| --- | --------- | ------------ | ---------------- |
+| 2 | Thảo luận và lựa chọn đề tài thực tập | 20/10/2025 | 20/10/2025 |
+| 3 | Phân tích yêu cầu hệ thống và xác định các nhóm người dùng | 21/10/2025 | 21/10/2025 |
+| 4 | Thiết kế cơ sở dữ liệu và kiến trúc tổng thể của hệ thống | 22/10/2025 | 22/10/2025 |
+| 5 | Phát triển các chức năng đăng nhập, quản lý sản phẩm và quản lý đơn hàng | 23/10/2025 | 24/10/2025 |
+| 6 | Tích hợp MongoDB Atlas và Amazon S3 để lưu trữ dữ liệu và hình ảnh | 24/10/2025 | 24/10/2025 |
 
-### Kết quả đạt được tuần 11:
+### Kết quả đạt được trong tuần 11:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Hoàn thành việc lựa chọn và xác định đề tài thực tập: **Nền tảng thương mại điện tử TechMarket**.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Hoàn thành thiết kế kiến trúc tổng thể của hệ thống.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Thiết kế cơ sở dữ liệu trên MongoDB Atlas.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Xây dựng phần Backend bằng Node.js và Express.js.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Hoàn thành các chức năng dành cho khách hàng gồm:
+  * Đăng ký tài khoản
+  * Đăng nhập
+  * Quản lý thông tin cá nhân
+  * Xem sản phẩm
+  * Giỏ hàng
+  * Thanh toán
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Hoàn thành các chức năng dành cho cửa hàng gồm:
+  * Quản lý sản phẩm
+  * Quản lý đơn hàng
+  * Thống kê doanh thu và hoa hồng
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Hoàn thành các chức năng dành cho quản trị viên gồm:
+  * Quản lý người dùng
+  * Quản lý cửa hàng
+  * Quản lý đơn hàng
+  * Thống kê hệ thống
 
+* Tích hợp MongoDB Atlas làm cơ sở dữ liệu chính của ứng dụng.
 
+* Tích hợp Amazon S3 để lưu trữ hình ảnh sản phẩm và ảnh đại diện người dùng.
+
+* Hoàn thiện các chức năng nghiệp vụ chính của hệ thống.

@@ -1,31 +1,35 @@
 ---
-title: "Blog 3"
-date: 2024-01-01
-weight: 1
+title: "Blog 3 - Scale AWS Storage Gateway AL2023 Migration with Infrastructure as Code"
+date: 2026-07-01
+weight: 3
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+# SCALE AWS STORAGE GATEWAY AL2023 MIGRATION WITH INFRASTRUCTURE AS CODE
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+Amazon Linux 2 will reach end of support in 2026. AWS recommends migrating Storage Gateway appliances to Amazon Linux 2023 using Infrastructure as Code.
 
-Key points to know:
+## Key points to know
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+* Terraform provisions the new EC2 instance.
+* Existing network settings are reused automatically.
+* Ansible migrates EBS volumes.
+* Cache disks are preserved.
+* DNS or Elastic IP is reassigned.
+* Gateway ID remains unchanged.
+* Downtime is minimized.
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+This Infrastructure as Code solution automates Storage Gateway migration while improving scalability and operational efficiency.
 
-...Image...
+## Image
 
-...Link...
+![Blog 3](/images/blog3.jpg)
 
-...Guide...
+## Link
+
+https://www.facebook.com/groups/awsstudygroupfcj/permalink/2200302014068092/?rdid=9X5NjrHKM6BsWmWU#
+
+## Guide
+
+https://docs.aws.amazon.com/storagegateway/

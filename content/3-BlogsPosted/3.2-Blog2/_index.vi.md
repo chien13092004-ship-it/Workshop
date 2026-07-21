@@ -1,31 +1,38 @@
 ---
-title: "Blog 2"
-date: 2024-01-01
-weight: 1
+title: "Blog 2 - Tự động hóa phân tích hợp đồng với Doczy.ai trên AWS"
+date: 2026-06-30
+weight: 2
 chapter: false
 pre: " <b> 3.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# SESSION POLICIES TRONG AMAZON EKS POD IDENTITY
+# TỰ ĐỘNG HÓA PHÂN TÍCH HỢP ĐỒNG VỚI DOCZY.AI TRÊN AWS
 
-Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+Doczy.ai™ là nền tảng phân tích tài liệu sử dụng Trí tuệ nhân tạo (AI), giúp tự động hóa quá trình phân tích hợp đồng bằng các dịch vụ Generative AI của AWS. Nền tảng này cải thiện đáng kể độ chính xác trong việc trích xuất dữ liệu so với các hệ thống truyền thống dựa trên quy tắc.
 
-Các điểm chính cần nắm:
+## Những điểm chính cần biết
 
-* Session policy là một IAM policy inline được chỉ định khi tạo hoặc cập nhật Pod Identity association.
-* Quyền hiệu quả = intersection (giao) giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
-* Giúp tránh tình trạng over-permissioning khi reuse chung một IAM role cho nhiều workloads có nhu cầu khác nhau.
-* Hỗ trợ cả same-account và cross-account (qua IAM role chaining).
-* Giảm đáng kể số lượng IAM roles cần quản lý, tránh chạm giới hạn quota IAM trong cluster lớn.
-* Cấu hình dễ dàng qua AWS Management Console, AWS CLI hoặc AWS SDK khi tạo association giữa Kubernetes ServiceAccount và IAM role.
+* Amazon Cognito xác thực người dùng.
+* Amazon S3 lưu trữ các hợp đồng được tải lên.
+* AWS Lambda kích hoạt Amazon Textract.
+* Amazon Textract trích xuất văn bản và siêu dữ liệu.
+* Smart Chunking giúp bảo toàn cấu trúc tài liệu.
+* Amazon ECS chạy các tác vụ AI.
+* Amazon Bedrock thực hiện phân tích hợp đồng.
+* Snowflake lưu trữ dữ liệu đã được xử lý.
+* Amazon CloudWatch giám sát hệ thống.
+* AWS Secrets Manager bảo vệ thông tin xác thực.
 
-Tính năng này đặc biệt hữu ích khi bạn có nhiều ứng dụng chạy trên cùng một IAM role nhưng cần giới hạn quyền khác nhau (ví dụ: một pod chỉ đọc S3 bucket cụ thể, pod khác chỉ gọi một số API nhất định).
+Kiến trúc này minh họa cách các dịch vụ AI của AWS giúp nâng cao khả năng xử lý tài liệu và phân tích hợp đồng trong doanh nghiệp.
 
-...Hình ảnh...
+## Hình ảnh
 
-...Link...
+![Blog 2](/images/blog2.jpg)
 
-...Hướng dẫn...
+## Liên kết
+
+https://www.facebook.com/groups/awsstudygroupfcj/permalink/2199556717475955/?rdid=PDmR1hagSXBb7pXj#
+
+## Hướng dẫn
+
+https://docs.aws.amazon.com/bedrock/

@@ -1,57 +1,54 @@
 ---
 title: "Week 12 Worklog"
-date: 2026-04-12
+date: 2026-04-19
 weight: 12
 chapter: false
 pre: " <b> 1.12. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 12 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Deploy the application to AWS.
+* Verify the production environment and complete the internship project.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Day | Task | Start Date | Completion Date |
+| --- | ---- | ---------- | --------------- |
+| 2 | Containerize the application using Docker | 10/27/2025 | 10/27/2025 |
+| 3 | Push Docker Image to Amazon ECR | 10/28/2025 | 10/28/2025 |
+| 4 | Deploy the application to Amazon ECS Fargate | 10/29/2025 | 10/29/2025 |
+| 5 | Configure Application Load Balancer, Route 53 and ACM | 10/30/2025 | 10/30/2025 |
+| 6 | Configure AWS CodeBuild, monitor the system with CloudWatch, perform testing and complete the project | 10/31/2025 | 10/31/2025 |
 
 ### Week 12 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Successfully containerized the application using Docker.
 
-* Successfully created and configured an AWS Free Tier account.
+* Uploaded Docker Images to Amazon ECR.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Successfully deployed the application on Amazon ECS Fargate.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Configured Application Load Balancer for external access.
 
-* Used AWS CLI to perform basic operations such as:
+* Configured Amazon Route 53 with a custom domain.
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+* Configured AWS Certificate Manager (ACM) to enable HTTPS.
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Configured AWS CodeBuild for automated build and deployment.
+
+* Monitored the application using Amazon CloudWatch.
+
+* Performed end-to-end testing of:
+  * Homepage
+  * User registration
+  * Login
+  * Product management
+  * Shopping
+  * Checkout
+  * Order management
+  * Administrator dashboard
+
+* Successfully deployed the production website.
+
+* Completed the internship project and verified that all application functions operated correctly on AWS Cloud.

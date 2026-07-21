@@ -1,59 +1,46 @@
 ---
-title: "Worklog Tuần 10"
+title: "Nhật ký công việc tuần 10"
 date: 2026-04-12
 weight: 10
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 10:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Chuẩn bị cho đề tài thực tập.
+* Nghiên cứu công nghệ và thiết kế kiến trúc ban đầu của hệ thống.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Công việc thực hiện trong tuần:
 
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành |
+| --- | --------- | ------------ | ---------------- |
+| 2 | Nghiên cứu các ý tưởng đề tài và trao đổi về yêu cầu của hệ thống | 13/10/2025 | 13/10/2025 |
+| 3 | Lựa chọn đề tài và xác định các công nghệ sẽ sử dụng | 14/10/2025 | 14/10/2025 |
+| 4 | Nghiên cứu Node.js, Express.js và MongoDB Atlas để phát triển Backend | 15/10/2025 | 15/10/2025 |
+| 5 | Thiết kế kiến trúc ban đầu của hệ thống và cơ sở dữ liệu | 16/10/2025 | 16/10/2025 |
+| 6 | Thiết lập môi trường phát triển và khởi tạo mã nguồn dự án | 17/10/2025 | 17/10/2025 |
 
-### Kết quả đạt được tuần 10:
+### Kết quả đạt được trong tuần 10:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Nghiên cứu và đánh giá các ý tưởng cho đề tài thực tập.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Lựa chọn đề tài thực tập: **Nền tảng thương mại điện tử TechMarket**.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Xác định các công nghệ sử dụng trong dự án gồm:
+  * Node.js
+  * Express.js
+  * MongoDB Atlas
+  * Amazon S3
+  * Docker
+  * Amazon ECS Fargate
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Hoàn thành thiết kế kiến trúc ban đầu của hệ thống.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Thiết kế cấu trúc cơ sở dữ liệu MongoDB.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Thiết lập thành công môi trường phát triển.
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Khởi tạo mã nguồn của dự án.
 
-
+* Chuẩn bị đầy đủ nền tảng để bắt đầu giai đoạn phát triển và triển khai hệ thống.

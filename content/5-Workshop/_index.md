@@ -6,32 +6,27 @@ chapter: false
 pre: " <b> 5. </b> "
 ---
 
-
-# Deploying a Second-Hand Marketplace Platform on AWS
+# Deploying the TechMarket E-Commerce Platform on AWS
 
 #### Overview
 
-In this workshop, we will build and deploy a **Second-Hand Marketplace Platform** using a cloud-native architecture on AWS.
+In this workshop, we will build and deploy the **TechMarket E-Commerce Platform** using a cloud-native architecture on AWS.
 
-The solution leverages AWS managed services including **Amazon ECS Fargate**, **Amazon ECR**, **Amazon S3**, **AWS CodeBuild**, **Application Load Balancer**, **Amazon CloudWatch**, **AWS IAM**, **AWS Secrets Manager**, **Amazon Route 53**, and **AWS Certificate Manager (ACM)**, integrated with **MongoDB Atlas** to provide a scalable, secure, highly available, and automated deployment platform.
+The solution leverages AWS managed services including **Amazon ECS Fargate**, **Amazon ECR**, **Amazon S3**, **AWS CodeBuild**, **Application Load Balancer**, **Amazon CloudWatch**, **Amazon Route 53**, and **AWS Certificate Manager (ACM)**, integrated with **MongoDB Atlas** to provide a scalable, secure, highly available, and automated deployment platform.
 
-Throughout this workshop, you will prepare the project environment, configure AWS infrastructure, integrate external services, containerize the application using Docker, deploy it to Amazon ECS Fargate, configure CI/CD, monitor system performance, and perform end-to-end testing.
+Throughout this workshop, you will prepare the project environment, configure networking, containerize the application using Docker, deploy it to Amazon ECS Fargate, configure a custom domain with HTTPS, automate deployment using AWS CodeBuild, monitor system health, perform end-to-end testing, and finally clean up all AWS resources.
 
 #### Content
 
-1. [Workshop overview](5.1-Workshop-overview/)
+1. [Workshop Overview](5.1-Workshop-overview/)
 2. [Prerequisite](5.2-Prerequisite/)
-3. [Prepare project foundation](5.3-Project-foundation/)
-4. [Configure VPC networking](5.4-VPC/)
-5. [Configure MongoDB Atlas](5.5-MongoDB-Atlas/)
-6. [Integrate Amazon S3](5.6-Amazon-S3/)
-7. [Manage secrets with AWS Secrets Manager](5.7-Secrets-Manager/)
-8. [Dockerize the application](5.8-Docker/)
-9. [Push Docker image to Amazon ECR](5.9-Amazon-ECR/)
-10. [Deploy the application on Amazon ECS Fargate](5.10-Amazon-ECS/)
-11. [Configure Application Load Balancer](5.11-Application-Load-Balancer/)
-12. [Configure Amazon Route 53 and AWS Certificate Manager](5.12-Route53-ACM/)
-13. [Configure CI/CD](5.13-CICD/)
-14. [Monitoring and notifications](5.14-Monitoring/)
-15. [End-to-end testing](5.15-Testing/)
-16. [Clean up resources](5.16-Cleanup/)
+3. [Project Foundation](5.3-Project-foundation/)
+4. [Networking](5.4-Networking/)
+5. [Application Services](5.5-Application-Services/)
+6. [Containerization](5.6-Containerization/)
+7. [Deploy Application](5.7-Deploy-Application/)
+8. [Domain and HTTPS](5.8-Domain-and-HTTPS/)
+9. [CI/CD](5.9-CICD/)
+10. [Monitoring](5.10-Monitoring/)
+11. [Testing](5.11-Testing/)
+12. [Cleanup](5.12-Cleanup/)
