@@ -1,18 +1,22 @@
 ---
 title : "Introduction"
-date : 2024-01-01 
-weight : 1 
+date : 2026-01-01
+weight : 1
 chapter : false
 pre : " <b> 5.1. </b> "
 ---
 
-#### VPC endpoints
-+ **VPC endpoints** are virtual devices. They are horizontally scaled, redundant, and highly available VPC components. They allow communication between your compute resources and AWS services without imposing availability risks.
-+ Compute resources running in VPC can access  **Amazon S3**  using a Gateway endpoint. PrivateLink interface endpoints can be used by compute resources running in VPC or on-premises.
+#### Solution overview
+
++ **Second-Hand Marketplace Platform** is a cloud-native web application deployed on AWS. It enables users to register accounts, manage products, upload product images, search products, and browse categories through a centralized online marketplace.
++ The application is built using **Node.js**, **Express.js**, **MongoDB Atlas**, and **EJS**, while AWS services including **Amazon ECS Fargate**, **Amazon ECR**, **Amazon S3**, **AWS CodeBuild**, **Application Load Balancer**, **Amazon CloudWatch**, and **AWS IAM** provide a scalable, secure, and automated deployment platform.
 
 #### Workshop overview
-In this workshop, you will use two VPCs. 
-+ **"VPC Cloud"** is for cloud resources such as a  **Gateway endpoint** and an EC2 instance to test with. 
-+ **"VPC On-Prem"** simulates an on-premises environment such as a factory or corporate datacenter. An EC2 instance running strongSwan VPN software has been deployed in "VPC On-prem" and automatically configured to establish a Site-to-Site VPN tunnel with AWS Transit Gateway. This VPN simulates connectivity from an on-premises location to the AWS cloud. To minimize costs, only one VPN instance is provisioned to support this workshop. When planning VPN connectivity for your production workloads, AWS recommends using multiple VPN devices for high availability.
 
-![overview](/images/5-Workshop/5.1-Workshop-overview/diagram1.png)
+In this workshop, you will build and deploy a cloud-native Second-Hand Marketplace application on AWS.
+
++ **Application Layer** hosts the web application running on **Amazon ECS Fargate** behind an **Application Load Balancer (ALB)** to provide scalable and highly available access for users.
++ **Storage Layer** stores application data in **MongoDB Atlas** and product images in **Amazon S3**, providing reliable and centralized storage.
++ **Deployment Pipeline** uses **GitHub**, **AWS CodeBuild**, and **Amazon ECR** to automatically build Docker images and deploy the latest application version to Amazon ECS whenever new source code is pushed.
++ **Monitoring & Security** uses **Amazon CloudWatch** for application monitoring and **AWS IAM** for secure access management across AWS resources.
+

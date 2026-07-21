@@ -1,19 +1,21 @@
 ---
 title : "Giới thiệu"
-date : 2024-01-01 
+date : 2026-01-01
 weight : 1
 chapter : false
 pre : " <b> 5.1. </b> "
 ---
 
-#### Giới thiệu về VPC Endpoint
+#### Tổng quan về giải pháp
 
-+ Điểm cuối VPC (endpoint) là thiết bị ảo. Chúng là các thành phần VPC có thể mở rộng theo chiều ngang, dự phòng và có tính sẵn sàng cao. Chúng cho phép giao tiếp giữa tài nguyên điện toán của bạn và dịch vụ AWS mà không gây ra rủi ro về tính sẵn sàng.
-+ Tài nguyên điện toán đang chạy trong VPC có thể truy cập Amazon S3 bằng cách sử dụng điểm cuối Gateway. Interface Endpoint  PrivateLink có thể được sử dụng bởi tài nguyên chạy trong VPC hoặc tại TTDL.
++ **Nền tảng Mua bán Đồ cũ** là một ứng dụng web cloud-native được triển khai trên AWS. Hệ thống cho phép người dùng đăng ký tài khoản, quản lý sản phẩm, tải lên hình ảnh sản phẩm, tìm kiếm sản phẩm và duyệt sản phẩm theo danh mục thông qua một sàn giao dịch trực tuyến tập trung.
++ Ứng dụng được xây dựng bằng **Node.js**, **Express.js**, **MongoDB Atlas** và **EJS**, trong khi các dịch vụ AWS bao gồm **Amazon ECS Fargate**, **Amazon ECR**, **Amazon S3**, **AWS CodeBuild**, **Application Load Balancer**, **Amazon CloudWatch** và **AWS IAM** cung cấp một nền tảng triển khai có khả năng mở rộng, bảo mật và tự động.
 
 #### Tổng quan về workshop
-Trong workshop này, bạn sẽ sử dụng hai VPC.
-+ **"VPC Cloud"** dành cho các tài nguyên cloud như Gateway endpoint và EC2 instance để kiểm tra.
-+ **"VPC On-Prem"** mô phỏng môi trường truyền thống như nhà máy hoặc trung tâm dữ liệu của công ty. Một EC2 Instance chạy phần mềm StrongSwan VPN đã được triển khai trong "VPC On-prem" và được cấu hình tự động để thiết lập đường hầm VPN Site-to-Site với AWS Transit Gateway. VPN này mô phỏng kết nối từ một vị trí tại TTDL (on-prem) với AWS cloud. Để giảm thiểu chi phí, chỉ một phiên bản VPN được cung cấp để hỗ trợ workshop này. Khi lập kế hoạch kết nối VPN cho production workloads của bạn, AWS khuyên bạn nên sử dụng nhiều thiết bị VPN để có tính sẵn sàng cao.
 
-![overview](/images/5-Workshop/5.1-Workshop-overview/diagram1.png)
+Trong workshop này, bạn sẽ xây dựng và triển khai một ứng dụng **Nền tảng Mua bán Đồ cũ** theo kiến trúc cloud-native trên AWS.
+
++ **Tầng ứng dụng (Application Layer)** lưu trữ ứng dụng web chạy trên **Amazon ECS Fargate** phía sau **Application Load Balancer (ALB)** nhằm cung cấp khả năng truy cập có khả năng mở rộng và tính sẵn sàng cao cho người dùng.
++ **Tầng lưu trữ (Storage Layer)** lưu trữ dữ liệu ứng dụng trong **MongoDB Atlas** và hình ảnh sản phẩm trong **Amazon S3**, cung cấp khả năng lưu trữ tập trung và đáng tin cậy.
++ **Quy trình triển khai (Deployment Pipeline)** sử dụng **GitHub**, **AWS CodeBuild** và **Amazon ECR** để tự động xây dựng Docker image và triển khai phiên bản mới nhất của ứng dụng lên **Amazon ECS** mỗi khi mã nguồn mới được đẩy lên GitHub.
++ **Giám sát và bảo mật (Monitoring & Security)** sử dụng **Amazon CloudWatch** để giám sát ứng dụng và **AWS IAM** để quản lý quyền truy cập an toàn đối với các tài nguyên AWS.
