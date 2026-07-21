@@ -205,28 +205,23 @@ The project was implemented through the following phases:
 
 ## Infrastructure Cost Estimate
 
-| AWS Service | Estimated Cost |
-|-------------|----------------|
-| Amazon ECS Fargate | AWS Free Tier / AWS Academy Credits |
-| Amazon ECR | Minimal |
-| Amazon S3 | Low |
-| AWS CodeBuild | AWS Free Tier |
-| Application Load Balancer | Low |
-| Amazon CloudWatch | Minimal |
-
-### Estimated Development Cost
-
-The project utilizes AWS Free Tier and AWS Academy credits during development, resulting in minimal infrastructure costs while providing a production-ready cloud environment.
+| Service | Estimated Cost |
+|----------|----------------|
+| Amazon ECS Fargate | ~$0.25/month |
+| Amazon S3 (Storage & Requests) | ~$0.15/month |
+| Amazon ECR | ~$0.03/month |
+| AWS CodeBuild | ~$0.05/month |
+| Application Load Balancer | ~$0.10/month |
+| Amazon CloudWatch | ~$0.02/month |
+| **Total Estimate** | **~$0.60 USD/month** |
 
 ### Cost Control Guidelines
 
-- Configure AWS Budgets for billing alerts.
-- Remove unused ECS tasks.
-- Delete unused Docker images in Amazon ECR.
-- Configure Amazon S3 Lifecycle Rules.
-- Monitor CloudWatch metrics regularly.
-
----
+- **AWS Budgets:** Automated alerts when costs exceed **$5.00** and **$10.00**.
+- **Amazon S3 Lifecycle Rules:** Automatically delete unused product images after **30 days**.
+- **Amazon ECR Lifecycle Policy:** Automatically remove unused Docker images.
+- **AWS CodeBuild:** Trigger builds only when code is pushed to the GitHub repository.
+- **Post-demo Cleanup:** Remove ECS services, ECR images, and unused S3 objects after project completion to avoid unnecessary charges.
 
 # 7. Risk Assessment
 

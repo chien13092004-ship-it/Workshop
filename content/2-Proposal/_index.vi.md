@@ -204,27 +204,23 @@ Dự án được triển khai thông qua các giai đoạn sau:
 
 ## Ước tính chi phí hạ tầng
 
-| Dịch vụ AWS | Chi phí ước tính |
-|-------------|------------------|
-| Amazon ECS Fargate | AWS Free Tier / AWS Academy Credits |
-| Amazon ECR | Tối thiểu |
-| Amazon S3 | Thấp |
-| AWS CodeBuild | AWS Free Tier |
-| Application Load Balancer | Thấp |
-| Amazon CloudWatch | Tối thiểu |
-
-### Chi phí phát triển ước tính
-
-Dự án sử dụng AWS Free Tier và AWS Academy Credits trong quá trình phát triển, giúp giảm thiểu chi phí hạ tầng đồng thời vẫn cung cấp một môi trường đám mây sẵn sàng cho môi trường thực tế.
+| Dịch vụ | Chi phí ước tính |
+|----------|------------------|
+| Amazon ECS Fargate | ~$0.25/tháng |
+| Amazon S3 (Lưu trữ & Yêu cầu truy cập) | ~$0.15/tháng |
+| Amazon ECR | ~$0.03/tháng |
+| AWS CodeBuild | ~$0.05/tháng |
+| Application Load Balancer | ~$0.10/tháng |
+| Amazon CloudWatch | ~$0.02/tháng |
+| **Tổng chi phí ước tính** | **~$0.60 USD/tháng** |
 
 ### Hướng dẫn kiểm soát chi phí
 
-- Cấu hình AWS Budgets để nhận cảnh báo chi phí.
-- Xóa các ECS Task không còn sử dụng.
-- Xóa các Docker image không còn sử dụng trong Amazon ECR.
-- Cấu hình Lifecycle Rules cho Amazon S3.
-- Theo dõi các chỉ số CloudWatch thường xuyên.
-
+- **AWS Budgets:** Thiết lập cảnh báo tự động khi chi phí vượt **5.00 USD** và **10.00 USD**.
+- **Amazon S3 Lifecycle Rules:** Tự động xóa hình ảnh sản phẩm không còn sử dụng sau **30 ngày**.
+- **Amazon ECR Lifecycle Policy:** Tự động xóa các Docker image cũ để giảm chi phí lưu trữ.
+- **AWS CodeBuild:** Chỉ kích hoạt quá trình build khi có mã nguồn mới được đẩy lên GitHub.
+- **Dọn dẹp sau khi trình diễn:** Xóa các ECS Service, Docker image trong Amazon ECR và các đối tượng không sử dụng trong Amazon S3 để tránh phát sinh chi phí.
 ---
 
 # 7. Đánh giá rủi ro
