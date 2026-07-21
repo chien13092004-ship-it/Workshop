@@ -3,7 +3,7 @@ title: "Sự kiện 1 - FCAJ Community Day"
 date: 2026-05-23
 weight: 1
 chapter: false
-pre: " <b> 3.1. </b> "
+pre: " <b> 4.1. </b> "
 ---
 
 # FCAJ Community Day
