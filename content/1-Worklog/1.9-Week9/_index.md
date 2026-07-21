@@ -5,53 +5,42 @@ weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 9 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Review AWS knowledge learned during the internship.
+* Consolidate AWS services that will be used in the internship project.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 1 | - Review IAM, EC2, VPC and Amazon S3.<br>- Summarize AWS security best practices. | 31/05/2026 | 31/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 2 | - Review Amazon RDS, Route 53 and networking services.<br>- Review deployment architecture. | 01/06/2026 | 01/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 3 | - Review Docker and Amazon ECS.<br>- Practice container deployment workflow. | 02/06/2026 | 02/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 4 | - Review Amazon CloudWatch.<br>- Review CI/CD concepts and deployment process. | 03/06/2026 | 03/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 5 | - Summarize AWS services required for the internship project.<br>- Prepare development environment for the project. | 04/06/2026 | 05/06/2026 | https://cloudjourney.awsstudygroup.com/ |
 
 ### Week 9 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Reviewed the AWS services learned throughout the internship.
 
-* Successfully created and configured an AWS Free Tier account.
+* Consolidated knowledge of:
+  * IAM
+  * Amazon EC2
+  * Amazon VPC
+  * Amazon S3
+  * Amazon RDS
+  * Amazon ECS
+  * Amazon Route 53
+  * Amazon CloudWatch
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Reviewed Docker and container deployment concepts.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Reviewed CI/CD workflow and deployment process.
 
-* Used AWS CLI to perform basic operations such as:
+* Organized technical documentation and deployment workflow for the internship project.
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+* Prepared the development environment and AWS services before starting the implementation phase.
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Strengthened the overall understanding of AWS services required for deploying a cloud-native web application.

@@ -6,6 +6,7 @@ chapter: false
 pre: " <b> 1.8. </b> "
 ---
 
+
 ### Week 8 Objectives:
 
 * Learn Amazon ECS.

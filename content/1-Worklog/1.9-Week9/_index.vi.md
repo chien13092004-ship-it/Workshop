@@ -1,5 +1,5 @@
 ---
-title: "Worklog Tuần 9"
+title: "Nhật ký công việc tuần 9"
 date: 2026-04-12
 weight: 9
 chapter: false
@@ -8,49 +8,39 @@ pre: " <b> 1.9. </b> "
 
 ### Mục tiêu tuần 9:
 
-* Tìm hiểu Amazon CloudFront.
-* Tìm hiểu CloudFront với Amazon S3.
-* Tìm hiểu Amazon Route 53.
-* Tìm hiểu AWS Certificate Manager (ACM).
-* Tìm hiểu AWS WAF.
-* Tìm hiểu AWS Key Management Service (KMS).
+* Ôn tập toàn bộ kiến thức AWS đã học.
+* Củng cố các dịch vụ AWS sẽ sử dụng cho đề tài thực tập.
 
-### Các công việc cần triển khai trong tuần này:
+### Công việc thực hiện trong tuần:
 
-| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
-| --- | -------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2 | - Tìm hiểu Amazon CloudFront.<br>- Tìm hiểu Content Delivery Network (CDN).<br>- Tìm hiểu kiến trúc cơ bản của CloudFront. | 24/05/2026 | 24/05/2026 | https://cloudjourney.awsstudygroup.com/ |
-| 3 | - Tìm hiểu CloudFront với Amazon S3.<br>- Tìm hiểu Cache Behavior.<br>- Tìm hiểu triển khai website tĩnh. | 25/05/2026 | 25/05/2026 | https://cloudjourney.awsstudygroup.com/ |
-| 4 | - Tìm hiểu Amazon Route 53.<br>- Tìm hiểu Hosted Zones và DNS Records.<br>- Tìm hiểu kiến thức cơ bản về quản lý DNS. | 26/05/2026 | 26/05/2026 | https://cloudjourney.awsstudygroup.com/ |
-| 5 | - Tìm hiểu AWS Certificate Manager (ACM).<br>- Tìm hiểu chứng chỉ SSL/TLS.<br>- Tìm hiểu cách triển khai HTTPS. | 27/05/2026 | 27/05/2026 | https://cloudjourney.awsstudygroup.com/ |
-| 6 | - Tìm hiểu AWS WAF.<br>- Tìm hiểu các cuộc tấn công web phổ biến.<br>- Tìm hiểu các quy tắc WAF cơ bản. | 28/05/2026 | 28/05/2026 | https://cloudjourney.awsstudygroup.com/ |
-| 7 | - Tìm hiểu AWS Key Management Service (KMS).<br>- Tìm hiểu các khái niệm về mã hóa dữ liệu.<br>- Tìm hiểu kiến thức cơ bản về bảo vệ dữ liệu. | 29/05/2026 | 29/05/2026 | https://cloudjourney.awsstudygroup.com/ |
-| CN | - Ôn tập kiến thức trong tuần.<br>- Tổng hợp CloudFront, Route 53 và các dịch vụ bảo mật AWS.<br>- Sắp xếp ghi chú học tập. | 30/05/2026 | 30/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | ---------------- | ----------------------------------------- |
+| 1 | - Ôn tập IAM, EC2, VPC và Amazon S3.<br>- Tổng hợp các nguyên tắc bảo mật trên AWS. | 31/05/2026 | 31/05/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 2 | - Ôn tập Amazon RDS, Amazon Route 53 và các dịch vụ mạng.<br>- Xem lại kiến trúc triển khai hệ thống. | 01/06/2026 | 01/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 3 | - Ôn tập Docker và Amazon ECS.<br>- Xem lại quy trình triển khai container. | 02/06/2026 | 02/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 4 | - Ôn tập Amazon CloudWatch.<br>- Ôn tập quy trình CI/CD và triển khai ứng dụng. | 03/06/2026 | 03/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 5 | - Tổng hợp các dịch vụ AWS sẽ sử dụng trong đề tài thực tập.<br>- Chuẩn bị môi trường phát triển cho dự án. | 04/06/2026 | 05/06/2026 | https://cloudjourney.awsstudygroup.com/ |
 
-### Kết quả đạt được tuần 9:
+### Kết quả đạt được trong tuần 9:
 
-* Tìm hiểu Amazon CloudFront:
-  * Hiểu mục đích của Content Delivery Network (CDN).
-  * Hiểu cách CloudFront cải thiện hiệu năng ứng dụng.
+* Ôn tập toàn bộ các dịch vụ AWS đã học trong quá trình thực tập.
 
-* Tìm hiểu CloudFront với Amazon S3:
-  * Hiểu cơ chế Cache Behavior.
-  * Tìm hiểu cách triển khai website tĩnh.
+* Củng cố kiến thức về:
+  * IAM
+  * Amazon EC2
+  * Amazon VPC
+  * Amazon S3
+  * Amazon RDS
+  * Amazon ECS
+  * Amazon Route 53
+  * Amazon CloudWatch
 
-* Tìm hiểu Amazon Route 53:
-  * Hiểu Hosted Zones và DNS Records.
-  * Tìm hiểu kiến thức cơ bản về quản lý DNS.
+* Ôn tập Docker và quy trình triển khai container.
 
-* Tìm hiểu AWS Certificate Manager (ACM):
-  * Hiểu chứng chỉ SSL/TLS.
-  * Tìm hiểu các kiến thức cơ bản về HTTPS.
+* Ôn tập quy trình CI/CD và triển khai ứng dụng.
 
-* Tìm hiểu AWS WAF:
-  * Hiểu các cuộc tấn công web phổ biến.
-  * Tìm hiểu các khái niệm cơ bản về bảo vệ ứng dụng web.
+* Hoàn thiện tài liệu kỹ thuật và quy trình triển khai phục vụ cho đề tài thực tập.
 
-* Tìm hiểu AWS Key Management Service (KMS):
-  * Hiểu các khái niệm về mã hóa dữ liệu.
-  * Tìm hiểu kiến thức cơ bản về bảo vệ dữ liệu.
+* Chuẩn bị đầy đủ môi trường phát triển và các dịch vụ AWS trước khi bắt đầu giai đoạn xây dựng hệ thống.
 
-* Củng cố kiến thức về các dịch vụ phân phối nội dung và bảo mật trên AWS.
+* Củng cố kiến thức tổng thể về các dịch vụ AWS phục vụ cho việc triển khai một ứng dụng web theo kiến trúc cloud-native.
