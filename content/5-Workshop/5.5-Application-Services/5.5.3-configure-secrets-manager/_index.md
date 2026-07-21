@@ -32,7 +32,7 @@ Configure the secret using the following information.
 
 Choose **Next** to continue.
 
-![Create Secret](/images/5-Workshop/5.5-Application-Services/5.5.3/create-secret.png)
+![Create Secret](/images/5-Workshop/5.5-Application-Services/create-secret.png)
 
 ---
 
@@ -49,7 +49,7 @@ Example:
 
 Choose **Next** and keep the remaining settings as default.
 
-![Secret Details](/images/5-Workshop/5.5-Application-Services/5.5.3/secret-details.png)
+![Secret Details](/images/5-Workshop/5.5-Application-Services/secret-details.png)
 
 ---
 
@@ -63,7 +63,7 @@ Confirm that the newly created secret appears in the list.
 
 The application will retrieve this secret during deployment on Amazon ECS.
 
-![Secret List](/images/5-Workshop/5.5-Application-Services/5.5.3/secret-list.png)
+![Secret List](/images/5-Workshop/5.5-Application-Services/secret-list.png)
 
 ---
 

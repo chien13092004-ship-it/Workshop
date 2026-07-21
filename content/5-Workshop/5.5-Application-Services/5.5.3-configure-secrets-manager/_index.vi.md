@@ -32,7 +32,7 @@ Cấu hình Secret theo các thông tin sau.
 
 Chọn **Next** để tiếp tục.
 
-![Create Secret](/images/5-Workshop/5.5-Application-Services/5.5.3/create-secret.png)
+![Create Secret](/images/5-Workshop/5.5-Application-Services/create-secret.png)
 
 ---
 
@@ -49,7 +49,7 @@ Ví dụ:
 
 Chọn **Next** và giữ nguyên các thiết lập mặc định.
 
-![Secret Details](/images/5-Workshop/5.5-Application-Services/5.5.3/secret-details.png)
+![Secret Details](/images/5-Workshop/5.5-Application-Services/secret-details.png)
 
 ---
 
@@ -63,7 +63,7 @@ Xác nhận Secret vừa tạo xuất hiện trong danh sách.
 
 Ứng dụng sẽ sử dụng Secret này khi được triển khai trên Amazon ECS.
 
-![Secret List](/images/5-Workshop/5.5-Application-Services/5.5.3/secret-list.png)
+![Secret List](/images/5-Workshop/5.5-Application-Services/secret-list.png)
 
 ---
 

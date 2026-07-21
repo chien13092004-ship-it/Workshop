@@ -1,7 +1,7 @@
 ---
 title : "Testing"
 date : 2024-01-01
-weight : 4
+weight : 11
 chapter : false
 pre : " <b> 5.11. </b> "
 ---
@@ -118,19 +118,7 @@ Product information is retrieved from MongoDB Atlas while product images are ser
 
 ---
 
-## G. Checkout
-
-Customers can review order information before completing their purchase.
-
-### Infrastructure Integration
-
-Checkout requests are processed by the Express backend deployed on Amazon ECS. Order information is validated before being stored in MongoDB Atlas.
-
-![Checkout](/images/5-Workshop/5.11-Testing/checkout.jpg)
-
----
-
-## H. Payment Page
+## G. Payment Page
 
 The payment page allows customers to review order information, customer information, payment method, and confirm the order.
 
@@ -142,7 +130,7 @@ The payment request is handled by the Node.js Express application running on Ama
 
 ---
 
-## I. Order Success
+## H. Order Success
 
 After payment confirmation, customers receive a successful order notification.
 
@@ -153,34 +141,9 @@ The application records the completed order in MongoDB Atlas before returning th
 ![Order Success](/images/5-Workshop/5.11-Testing/order-success.jpg)
 
 ---
-
 # 2. Shop Management
 
-## A. Shop Dashboard
-
-Shop owners manage their products, monitor customer orders, and review business statistics.
-
-### Infrastructure Integration
-
-All management operations are executed by the Node.js backend running on Amazon ECS. Business data is stored in MongoDB Atlas while uploaded product images remain in Amazon S3.
-
-![Shop Dashboard](/images/5-Workshop/5.11-Testing/shop-dashboard.jpg)
-
----
-
-## B. Order Management
-
-Shop owners manage customer orders, update order statuses, and process completed purchases.
-
-### Infrastructure Integration
-
-Order information is retrieved from MongoDB Atlas. Status updates are processed by the ECS application and synchronized immediately with the database.
-
-![Order Management](/images/5-Workshop/5.11-Testing/shop-orders.jpg)
-
----
-
-## C. Commission Statistics
+## A. Commission Statistics
 
 Shop owners can monitor revenue and commission generated from completed orders.
 
@@ -225,43 +188,7 @@ Order records are retrieved from MongoDB Atlas through the Node.js backend deplo
 
 ---
 
-## C. User Management
-
-Administrators manage customer accounts and monitor registered users.
-
-### Infrastructure Integration
-
-User information is queried from MongoDB Atlas. Administrative operations are executed by the ECS application.
-
-![User Management](/images/5-Workshop/5.11-Testing/admin-users.jpg)
-
----
-
-## D. Shop Management
-
-Administrators approve or reject shop registration requests.
-
-### Infrastructure Integration
-
-Shop information is retrieved from MongoDB Atlas, and approval decisions are processed through the backend application.
-
-![Shop Management](/images/5-Workshop/5.11-Testing/admin-shops.jpg)
-
----
-
-## E. Reports
-
-Administrators can review revenue reports and commission statistics across the platform.
-
-### Infrastructure Integration
-
-The reporting module aggregates sales information from MongoDB Atlas. Calculations are performed by the Node.js backend and displayed through the administrator interface.
-
-![Reports](/images/5-Workshop/5.11-Testing/admin-reports.jpg)
-
----
-
-## F. Commission Statistics
+## C. Commission Statistics
 
 Administrators can review platform-wide commission, monthly revenue, completed orders, and payment status of commission records.
 
@@ -278,7 +205,7 @@ The Node.js backend aggregates commission data from MongoDB Atlas and returns st
 During application testing, the deployed platform integrates the following AWS services:
 
 | AWS Service | Purpose |
-|------------|---------|
+|-------------|---------|
 | Amazon ECS Fargate | Hosts the Node.js Express application |
 | Amazon ECR | Stores Docker container images |
 | Amazon S3 | Stores product images and user avatars |

@@ -57,7 +57,7 @@ Confirm that the uploaded images are available in the bucket.
 
 These images will be accessed by the application when displaying product information.
 
-![Bucket Objects](/images/5-Workshop/5.5-Application-Services/bucket-objects.png)
+![Bucket Objects](/images/5-Workshop/5.5-Application-Services/bucket-object.png)
 
 ---
 
