@@ -11,6 +11,11 @@ pre : " <b> 5.11. </b> "
 This section demonstrates the complete deployment of the Second-Hand Marketplace E-Commerce platform on AWS. It showcases the main user interfaces of the application and explains how each feature interacts with the deployed cloud infrastructure, including Amazon ECS Fargate, Amazon S3, MongoDB Atlas, Amazon Route 53, AWS Certificate Manager (ACM), Application Load Balancer, Amazon CloudWatch, Amazon ECR, and AWS CodeBuild.
 
 ---
+## Demo Video
+
+Watch the complete system demonstration here:
+
+**YouTube:** https://youtu.be/jmZskrHVbGo
 
 # 1. Customer Website
 
