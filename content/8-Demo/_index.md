@@ -13,5 +13,5 @@ This section demonstrates the completed deployment of the **Second-Hand Marketpl
 The following video presents the complete workflow of the application, including user registration, login, product management, shopping, order processing, and administrator management.
 
 <video width="100%" controls preload="metadata">
-    <source src="{{ "videos/Techmarket - Google Chrome 2026-07-21 23-22-42.mp4" | relURL }}" type="video/mp4">
+    <source src="/Workshop/videos/Techmarket%20-%20Google%20Chrome%202026-07-21%2023-22-42.mp4" type="video/mp4">
 </video>

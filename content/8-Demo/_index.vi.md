@@ -14,5 +14,5 @@ Video dưới đây mô tả toàn bộ quy trình sử dụng hệ thống, bao
 
 
 <video width="100%" controls preload="metadata">
-    <source src="{{ "videos/Techmarket - Google Chrome 2026-07-21 23-22-42.mp4" | relURL }}" type="video/mp4">
+    <source src="/Workshop/videos/Techmarket%20-%20Google%20Chrome%202026-07-21%2023-22-42.mp4" type="video/mp4">
 </video>
