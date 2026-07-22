@@ -6,11 +6,11 @@ chapter: false
 pre: " <b> 5. </b> "
 ---
 
-# Deploying the TechMarket E-Commerce Platform on AWS
+# Deploying the Second-Hand Marketplace on AWS
 
 #### Overview
 
-In this workshop, we will build and deploy the **TechMarket E-Commerce Platform** using a cloud-native architecture on AWS.
+In this workshop, we will build and deploy the **Second-Hand Marketplace** using a cloud-native architecture on AWS.
 
 The solution leverages AWS managed services including **Amazon ECS Fargate**, **Amazon ECR**, **Amazon S3**, **AWS CodeBuild**, **Application Load Balancer**, **Amazon CloudWatch**, **Amazon Route 53**, and **AWS Certificate Manager (ACM)**, integrated with **MongoDB Atlas** to provide a scalable, secure, highly available, and automated deployment platform.
 

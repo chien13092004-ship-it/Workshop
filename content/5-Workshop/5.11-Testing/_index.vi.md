@@ -8,7 +8,7 @@ pre : " <b> 5.11. </b> "
 
 # 5.11. Kiểm thử
 
-Phần này trình bày quá trình triển khai hoàn chỉnh nền tảng thương mại điện tử TechMarket trên AWS. Đồng thời minh họa các giao diện chính của ứng dụng và giải thích cách từng chức năng tương tác với hạ tầng đám mây đã triển khai, bao gồm Amazon ECS Fargate, Amazon S3, MongoDB Atlas, Amazon Route 53, AWS Certificate Manager (ACM), Application Load Balancer, Amazon CloudWatch, Amazon ECR và AWS CodeBuild.
+Phần này trình bày quá trình triển khai hoàn chỉnh nền tảng thương mại điện tử Second-Hand Marketplace trên AWS. Đồng thời minh họa các giao diện chính của ứng dụng và giải thích cách từng chức năng tương tác với hạ tầng đám mây đã triển khai, bao gồm Amazon ECS Fargate, Amazon S3, MongoDB Atlas, Amazon Route 53, AWS Certificate Manager (ACM), Application Load Balancer, Amazon CloudWatch, Amazon ECR và AWS CodeBuild.
 
 ---
 
@@ -16,7 +16,7 @@ Phần này trình bày quá trình triển khai hoàn chỉnh nền tảng thư
 
 ## A. Trang chủ
 
-Trang chủ là giao diện chính nơi khách hàng duyệt các sản phẩm có trên nền tảng TechMarket.
+Trang chủ là giao diện chính nơi khách hàng duyệt các sản phẩm có trên nền tảng Second-Hand Marketplace.
 
 ### Tích hợp hạ tầng
 
@@ -217,4 +217,4 @@ Trong quá trình kiểm thử ứng dụng, nền tảng đã tích hợp các 
 | Amazon CloudWatch | Giám sát tình trạng hoạt động của ứng dụng |
 | AWS CodeBuild | Tự động hóa quá trình build và triển khai |
 
-Việc tất cả các giao diện hoạt động thành công chứng minh rằng ứng dụng TechMarket đã được triển khai hoàn chỉnh và vận hành ổn định trên hạ tầng điện toán đám mây AWS.
+Việc tất cả các giao diện hoạt động thành công chứng minh rằng ứng dụng Second-Hand Marketplace đã được triển khai hoàn chỉnh và vận hành ổn định trên hạ tầng điện toán đám mây AWS.

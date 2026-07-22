@@ -10,7 +10,7 @@ pre = "<b>5.12. </b>"
 
 ## Tổng quan
 
-Sau khi triển khai và kiểm thử thành công ứng dụng TechMarket, các tài nguyên AWS đã tạo trong workshop nên được xóa để tránh phát sinh chi phí không cần thiết.
+Sau khi triển khai và kiểm thử thành công ứng dụng Second-Hand Marketplace, các tài nguyên AWS đã tạo trong workshop nên được xóa để tránh phát sinh chi phí không cần thiết.
 
 Phần này hướng dẫn bạn xóa toàn bộ hạ tầng đã triển khai theo đúng thứ tự.
 

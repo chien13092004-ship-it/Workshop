@@ -26,10 +26,9 @@ The deployment includes creating an ECS cluster, configuring a task definition, 
 
 Complete the following sections in order:
 
-- **5.7.1 Create ECS Cluster**
-- **5.7.2 Create Task Definition**
-- **5.7.3 Create ECS Service**
-- **5.7.4 Verify Deployment**
+- **5.7.1-configure-load-balancer**
+- **5.7.2-deploy-amazon-ecs**
+
 
 ---
 

@@ -1,72 +1,93 @@
 ---
-title: "Bản đề xuất"
+title: "Đề xuất"
 date: 2026-01-01
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
 
-# Nền tảng Mua bán Đồ cũ
-## Nền tảng Mua bán Đồ cũ Cloud-Native trên AWS
+# Chợ Đồ Cũ
 
-## 1. Tóm tắt điều hành
-
-Nền tảng Mua bán Đồ cũ là một ứng dụng web dựa trên nền tảng đám mây cho phép người dùng mua và bán các sản phẩm đã qua sử dụng thông qua một sàn giao dịch trực tuyến tập trung. Hệ thống cung cấp xác thực người dùng, quản lý sản phẩm, tải lên hình ảnh, tìm kiếm và quản lý danh mục, đồng thời sử dụng các dịch vụ đám mây AWS để đảm bảo khả năng mở rộng, tính sẵn sàng và đơn giản hóa việc triển khai.
-
-Ứng dụng được phát triển bằng **Node.js**, **Express.js**, **MongoDB Atlas** và **EJS**, trong khi hạ tầng được triển khai trên **Amazon ECS Fargate** phía sau **Application Load Balancer**. Các Docker container được lưu trữ trong **Amazon ECR**, hình ảnh sản phẩm được lưu trữ trong **Amazon S3**, và **AWS CodeBuild** tự động xây dựng và triển khai ứng dụng mỗi khi mã nguồn mới được đẩy lên GitHub. Kiến trúc này cung cấp khả năng triển khai tự động, lưu trữ tập trung và hạ tầng đám mây tối ưu chi phí, phù hợp với các ứng dụng thương mại điện tử quy mô nhỏ và vừa.
+## Chợ Đồ Cũ Cloud-Native trên AWS
 
 ---
 
-# 2. Tuyên bố vấn đề
+# 1. Tóm tắt
 
-### Vấn đề hiện tại
+Chợ Đồ Cũ là một ứng dụng web trên nền tảng đám mây cho phép người dùng mua và bán sản phẩm đã qua sử dụng thông qua một sàn giao dịch trực tuyến tập trung. Nền tảng cung cấp xác thực người dùng, quản lý sản phẩm, quản lý danh mục, tải lên hình ảnh, tìm kiếm sản phẩm, giỏ hàng, thanh toán và quản lý đơn hàng, đồng thời sử dụng các dịch vụ AWS được quản lý để đảm bảo khả năng mở rộng, tính sẵn sàng, bảo mật và triển khai đơn giản.
 
-Nhiều nền tảng mua bán đồ cũ dựa vào các nền tảng mạng xã hội hoặc các trang web được quản lý thủ công, khiến việc quản lý sản phẩm trở nên kém hiệu quả và khó bảo trì. Hình ảnh thường được lưu trữ cục bộ, việc triển khai yêu cầu cập nhật thủ công và việc mở rộng hệ thống trở nên khó khăn khi số lượng người dùng tăng lên. Phương pháp triển khai truyền thống cũng làm tăng thời gian gián đoạn và khối lượng công việc vận hành mỗi khi phát hành tính năng mới hoặc sửa lỗi.
+Ứng dụng được phát triển bằng **Node.js**, **Express.js**, **MongoDB Atlas** và **EJS**. Ứng dụng được đóng gói bằng **Docker** và triển khai trên **Amazon ECS Fargate** phía sau **Application Load Balancer (ALB)**. Docker Image được lưu trữ trong **Amazon ECR**, hình ảnh sản phẩm được lưu trữ trong **Amazon S3**, và **AWS CodeBuild** tự động build và triển khai phiên bản mới nhất mỗi khi mã nguồn được đẩy lên GitHub.
 
-### Giải pháp
+Môi trường triển khai cũng sử dụng **Amazon Route 53** để quản lý tên miền, **AWS Certificate Manager (ACM)** để mã hóa HTTPS, **Amazon CloudWatch** để giám sát, **AWS IAM** để kiểm soát truy cập và **Amazon VPC** để bảo mật mạng. Kiến trúc này cung cấp triển khai tự động, lưu trữ tập trung, quản lý đơn giản và hạ tầng đám mây có khả năng mở rộng, phù hợp với các ứng dụng thương mại điện tử quy mô nhỏ và vừa.
 
-Giải pháp được đề xuất xây dựng một nền tảng mua bán đồ cũ cloud-native sử dụng các dịch vụ được quản lý của AWS.
+---
 
-Người dùng có thể đăng ký tài khoản, đăng nhập an toàn, tải lên sản phẩm kèm hình ảnh, duyệt sản phẩm theo danh mục, tìm kiếm sản phẩm và quản lý các tin đăng của mình thông qua một ứng dụng web. Thông tin sản phẩm được lưu trữ trong MongoDB Atlas, trong khi hình ảnh sản phẩm được tải lên sẽ được lưu trữ trong Amazon S3.
+# 2. Vấn đề
 
-Ứng dụng được đóng gói bằng Docker và triển khai trên Amazon ECS Fargate. AWS CodeBuild tự động phát hiện các lần commit mới từ GitHub, xây dựng Docker image, đẩy image lên Amazon ECR và kích hoạt Amazon ECS triển khai phiên bản mới nhất mà không cần can thiệp thủ công.
+## Vấn đề hiện tại
 
-### Lợi ích và hoàn vốn đầu tư
+Nhiều chợ đồ cũ hiện nay dựa vào mạng xã hội hoặc các website được quản lý thủ công, khiến việc quản lý sản phẩm kém hiệu quả và khó bảo trì. Hình ảnh sản phẩm thường được lưu trữ cục bộ, việc triển khai yêu cầu cập nhật thủ công và việc mở rộng ứng dụng trở nên khó khăn khi số lượng người dùng tăng.
 
-Nền tảng giúp giảm đáng kể thời gian triển khai thông qua quy trình CI/CD tự động, đồng thời cải thiện khả năng mở rộng và độ tin cậy của hệ thống. Các lập trình viên chỉ cần đẩy mã nguồn lên GitHub và toàn bộ quy trình triển khai sẽ được thực hiện tự động. Kiến trúc đám mây cũng giảm thiểu công việc quản lý máy chủ và tạo nền tảng vững chắc cho việc mở rộng trong tương lai. Trong quá trình phát triển, AWS Free Tier và AWS Academy Credits giúp giảm chi phí vận hành.
+Các phương pháp triển khai truyền thống cũng làm tăng thời gian ngừng hoạt động, yêu cầu nhiều công sức vận hành hơn và khiến việc bảo trì ứng dụng phức tạp hơn mỗi khi phát hành tính năng mới hoặc sửa lỗi.
 
+## Giải pháp
+
+Giải pháp đề xuất là phát triển một nền tảng chợ đồ cũ cloud-native sử dụng các dịch vụ AWS được quản lý.
+
+Người dùng có thể đăng ký tài khoản, đăng nhập an toàn, tải lên sản phẩm kèm hình ảnh, duyệt sản phẩm theo danh mục, tìm kiếm sản phẩm, quản lý giỏ hàng, đặt hàng và quản lý danh sách sản phẩm của mình thông qua ứng dụng web.
+
+Dữ liệu ứng dụng được lưu trữ trong **MongoDB Atlas**, trong khi hình ảnh sản phẩm được lưu trữ trong **Amazon S3**.
+
+Ứng dụng được đóng gói bằng Docker và triển khai trên **Amazon ECS Fargate**. Mỗi khi mã nguồn được đẩy lên GitHub, **AWS CodeBuild** tự động build Docker Image, đẩy lên **Amazon ECR** và triển khai phiên bản mới nhất lên Amazon ECS.
+
+Giao tiếp HTTPS được bảo mật bằng **AWS Certificate Manager (ACM)** và ứng dụng có thể truy cập thông qua tên miền tùy chỉnh được cấu hình bằng **Amazon Route 53**.
+
+## Lợi ích
+
+Kiến trúc đề xuất mang lại các lợi ích sau:
+
+- Đơn giản hóa triển khai ứng dụng.
+- Quy trình CI/CD tự động.
+- Hạ tầng đám mây có khả năng mở rộng.
+- Giao tiếp HTTPS an toàn.
+- Lưu trữ đám mây tin cậy.
+- Đơn giản hóa bảo trì ứng dụng.
+- Giảm công sức vận hành.
+- Dễ dàng mở rộng trong tương lai.
 ---
 
 # 3. Kiến trúc giải pháp
 
-Ứng dụng tuân theo kiến trúc container cloud-native sử dụng các dịch vụ được quản lý của AWS.
+Ứng dụng sử dụng kiến trúc container cloud-native được triển khai trên các dịch vụ AWS được quản lý.
 
 ## Kiến trúc giải pháp
 
-![System Architecture](/images/2-Proposal/system_architecture.jpg)
+![Kiến trúc hệ thống](/images/2-Proposal/system_architecture.png)
 
-### Các dịch vụ AWS được sử dụng
+## Các dịch vụ AWS sử dụng
 
-- **Amazon ECS Fargate** – Chạy các Docker container mà không cần quản lý máy chủ.
-- **Amazon ECR** – Lưu trữ các Docker image được sử dụng bởi ECS.
-- **AWS CodeBuild** – Tự động xây dựng và triển khai các phiên bản ứng dụng mới từ GitHub.
-- **Application Load Balancer (ALB)** – Phân phối các yêu cầu HTTP đến các ECS Task.
-- **Amazon S3** – Lưu trữ hình ảnh sản phẩm được tải lên.
-- **MongoDB Atlas** – Lưu trữ dữ liệu của ứng dụng bao gồm người dùng, sản phẩm và danh mục.
-- **AWS IAM** – Quản lý quyền truy cập đối với các tài nguyên AWS.
-- **Amazon CloudWatch** – Thu thập nhật ký ứng dụng và thông tin giám sát.
+- Amazon VPC
+- AWS IAM
+- Amazon ECS Fargate
+- Amazon ECR
+- Amazon S3
+- Application Load Balancer (ALB)
+- Amazon Route 53
+- AWS Certificate Manager (ACM)
+- AWS CodeBuild
+- Amazon CloudWatch
+- MongoDB Atlas
 
-### Thiết kế thành phần
+## Thiết kế thành phần
 
-**Giao diện người dùng**
+### Frontend
 
 - HTML
 - CSS
-- Bootstrap
 - JavaScript
 - EJS Template Engine
 
-**Phần phụ trợ**
+### Backend
 
 - Node.js
 - Express.js
@@ -74,44 +95,56 @@ Nền tảng giúp giảm đáng kể thời gian triển khai thông qua quy tr
 - Multer
 - AWS SDK for JavaScript
 
-**Cơ sở dữ liệu**
+### Cơ sở dữ liệu
 
 - MongoDB Atlas
 
-**Lưu trữ hình ảnh**
+### Lưu trữ hình ảnh
 
 - Amazon S3
 
-**Nền tảng Container**
+### Nền tảng Container
 
 - Docker
 - Amazon ECS Fargate
 
-**Quy trình triển khai**
+### Quy trình triển khai
 
-- GitHub
-- AWS CodeBuild
-- Amazon ECR
-- Amazon ECS
+GitHub
+
+↓
+
+AWS CodeBuild
+
+↓
+
+Amazon ECR
+
+↓
+
+Amazon ECS Fargate
+
 ---
 
 # 4. Triển khai kỹ thuật
 
 ## Các giai đoạn triển khai
 
-Dự án được triển khai thông qua các giai đoạn sau:
+Dự án được triển khai qua các giai đoạn sau:
 
 - Nghiên cứu kiến trúc đám mây AWS và chiến lược triển khai.
-- Thiết kế kiến trúc tổng thể của hệ thống sàn giao dịch.
-- Phát triển phần phụ trợ bằng Node.js và Express.js.
-- Cấu hình MongoDB Atlas để lưu trữ cơ sở dữ liệu trên nền tảng đám mây.
-- Tích hợp Amazon S3 để lưu trữ hình ảnh sản phẩm.
+- Thiết kế kiến trúc tổng thể hệ thống.
+- Phát triển Backend bằng Node.js và Express.js.
+- Cấu hình MongoDB Atlas cho cơ sở dữ liệu đám mây.
+- Tích hợp Amazon S3 để lưu trữ hình ảnh.
 - Đóng gói ứng dụng bằng Docker.
-- Đẩy Docker image lên Amazon ECR.
-- Triển khai Docker container trên Amazon ECS Fargate.
+- Đẩy Docker Image lên Amazon ECR.
+- Triển khai Docker Container trên Amazon ECS Fargate.
 - Cấu hình Application Load Balancer.
-- Triển khai Continuous Integration và Continuous Deployment bằng GitHub và AWS CodeBuild.
-- Thực hiện kiểm thử, tối ưu hóa và triển khai lên môi trường thực tế.
+- Cấu hình Amazon Route 53 và AWS Certificate Manager (ACM).
+- Cấu hình AWS CodeBuild để tự động build và triển khai.
+- Giám sát ứng dụng bằng Amazon CloudWatch.
+- Kiểm thử hệ thống và triển khai môi trường Production.
 
 ## Yêu cầu kỹ thuật
 
@@ -132,13 +165,16 @@ Dự án được triển khai thông qua các giai đoạn sau:
 
 ### Dịch vụ đám mây
 
+- Amazon VPC
+- AWS IAM
 - Amazon ECS Fargate
 - Amazon ECR
 - Amazon S3
+- Application Load Balancer (ALB)
+- Amazon Route 53
+- AWS Certificate Manager (ACM)
 - AWS CodeBuild
-- Application Load Balancer
 - Amazon CloudWatch
-- AWS IAM
 
 ### Công cụ phát triển
 
@@ -147,121 +183,145 @@ Dự án được triển khai thông qua các giai đoạn sau:
 - GitHub
 - Docker Desktop
 - MongoDB Compass
-
 ---
 
-# 5. Lộ trình & Mốc triển khai
+# 5. Lộ trình & Các mốc
 
-### Tuần 1
+Dự án được hoàn thành qua các giai đoạn sau.
 
-- Phân tích yêu cầu.
-- Lập kế hoạch kiến trúc AWS.
-- Thiết kế cơ sở dữ liệu.
+### Giai đoạn 1 – Lập kế hoạch dự án
 
-### Tuần 2
+- Phân tích yêu cầu hệ thống.
+- Thiết kế kiến trúc tổng thể hệ thống.
+- Thiết kế cấu trúc cơ sở dữ liệu MongoDB.
+- Chuẩn bị môi trường phát triển.
 
-- Xác thực người dùng.
-- CRUD sản phẩm.
-- Quản lý danh mục.
+### Giai đoạn 2 – Phát triển ứng dụng
 
-### Tuần 3
+- Phát triển xác thực người dùng.
+- Phát triển chức năng khách hàng.
+- Phát triển chức năng cửa hàng.
+- Phát triển chức năng quản trị viên.
+- Phát triển quản lý sản phẩm.
+- Phát triển quản lý đơn hàng.
 
-- Tích hợp MongoDB Atlas.
-- Tích hợp Amazon S3.
-- Tải lên hình ảnh sản phẩm.
+### Giai đoạn 3 – Tích hợp đám mây
 
-### Tuần 4
+- Cấu hình MongoDB Atlas.
+- Tích hợp Amazon S3 để lưu trữ hình ảnh.
+- Kiểm tra kết nối lưu trữ đám mây.
 
-- Đóng gói ứng dụng bằng Docker.
-- Cấu hình Amazon ECR.
+### Giai đoạn 4 – Đóng gói Container
 
-### Tuần 5
+- Tạo Dockerfile.
+- Build Docker Image.
+- Kiểm tra Docker Container cục bộ.
 
-- Triển khai Amazon ECS.
+### Giai đoạn 5 – Triển khai AWS
+
+- Đẩy Docker Image lên Amazon ECR.
+- Triển khai ứng dụng lên Amazon ECS Fargate.
 - Cấu hình Application Load Balancer.
+- Cấu hình Amazon Route 53.
+- Cấu hình AWS Certificate Manager (ACM).
 
-### Tuần 6
+### Giai đoạn 6 – CI/CD
 
-- Tích hợp GitHub.
+- Kết nối kho GitHub.
 - Cấu hình AWS CodeBuild.
-- Quy trình triển khai tự động.
+- Tự động triển khai ứng dụng.
 
-### Tuần 7
+### Giai đoạn 7 – Giám sát & Kiểm thử
 
-- Kiểm thử.
-- Sửa lỗi.
-- Tối ưu hiệu năng.
+- Cấu hình Amazon CloudWatch.
+- Thực hiện kiểm thử chức năng.
+- Xác minh triển khai ứng dụng.
+- Khắc phục lỗi triển khai.
 
-### Tuần 8
+### Giai đoạn 8 – Hoàn thành dự án
 
-- Triển khai cuối cùng.
-- Tài liệu.
-- Trình bày dự án.
+- Triển khai môi trường Production.
+- Hoàn thiện tài liệu.
+- Trình bày dự án hoàn thành.
 
 ---
 
-# 6. Ước tính ngân sách
+# 6. Ước tính chi phí
 
 ## Ước tính chi phí hạ tầng
 
 | Dịch vụ | Chi phí ước tính |
 |----------|------------------|
-| Amazon ECS Fargate | ~$0.25/tháng |
-| Amazon S3 (Lưu trữ & Yêu cầu truy cập) | ~$0.15/tháng |
-| Amazon ECR | ~$0.03/tháng |
-| AWS CodeBuild | ~$0.05/tháng |
-| Application Load Balancer | ~$0.10/tháng |
-| Amazon CloudWatch | ~$0.02/tháng |
-| **Tổng chi phí ước tính** | **~$0.60 USD/tháng** |
+| Amazon ECS Fargate | ~0.25 USD/tháng |
+| Amazon S3 (Lưu trữ & Requests) | ~0.15 USD/tháng |
+| Amazon ECR | ~0.03 USD/tháng |
+| AWS CodeBuild | ~0.05 USD/tháng |
+| Application Load Balancer | ~0.10 USD/tháng |
+| Amazon CloudWatch | ~0.02 USD/tháng |
+| **Tổng ước tính** | **~0.60 USD/tháng** |
 
 ### Hướng dẫn kiểm soát chi phí
 
-- **AWS Budgets:** Thiết lập cảnh báo tự động khi chi phí vượt **5.00 USD** và **10.00 USD**.
-- **Amazon S3 Lifecycle Rules:** Tự động xóa hình ảnh sản phẩm không còn sử dụng sau **30 ngày**.
-- **Amazon ECR Lifecycle Policy:** Tự động xóa các Docker image cũ để giảm chi phí lưu trữ.
-- **AWS CodeBuild:** Chỉ kích hoạt quá trình build khi có mã nguồn mới được đẩy lên GitHub.
-- **Dọn dẹp sau khi trình diễn:** Xóa các ECS Service, Docker image trong Amazon ECR và các đối tượng không sử dụng trong Amazon S3 để tránh phát sinh chi phí.
+- **AWS Budgets:** Cảnh báo tự động khi chi phí vượt **5.00 USD** và **10.00 USD**.
+- **Amazon ECR Lifecycle Policy:** Tự động xóa Docker Image không sử dụng.
+- **AWS CodeBuild:** Chỉ build khi mã nguồn được đẩy lên kho GitHub.
+- **Dọn dẹp sau demo:** Xóa ECS services, ECR images, S3 objects không sử dụng, Application Load Balancer, CloudWatch alarms, ACM certificates và Route 53 hosted zones sau khi hoàn thành dự án để tránh chi phí không cần thiết.
 ---
 
 # 7. Đánh giá rủi ro
 
 ## Ma trận rủi ro
 
-- Triển khai ECS thất bại.
-- Sự cố kết nối MongoDB Atlas.
-- Lỗi tải lên Amazon S3.
-- Chi phí dịch vụ AWS phát sinh ngoài dự kiến.
+- Triển khai Amazon ECS thất bại.
+- Lỗi kết nối MongoDB Atlas.
+- Tải lên Amazon S3 thất bại.
+- AWS CodeBuild build thất bại.
+- Lỗi cấu hình DNS Route 53.
+- Lỗi cấu hình chứng chỉ HTTPS.
+- Chi phí dịch vụ AWS ngoài dự kiến.
 
 ## Chiến lược giảm thiểu
 
-- Kích hoạt giám sát bằng Amazon CloudWatch.
+- Bật giám sát Amazon CloudWatch.
 - Cấu hình cảnh báo AWS Budgets.
-- Quản lý phiên bản Docker image bằng Amazon ECR.
-- Thực hiện sao lưu MongoDB Atlas định kỳ.
-- Áp dụng nguyên tắc phân quyền tối thiểu (Least Privilege) của IAM.
+- Quản lý phiên bản Docker Image bằng Amazon ECR.
+- Sao lưu MongoDB Atlas định kỳ.
+- Áp dụng chính sách IAM theo nguyên tắc đặc quyền tối thiểu.
+- Kiểm tra bản ghi DNS Route 53 trước khi triển khai.
+- Kiểm tra trạng thái chứng chỉ ACM trước khi bật HTTPS.
 
 ## Kế hoạch dự phòng
 
-- Quay lại Docker image trước đó.
-- Triển khai lại ECS Task Definition trước đó.
+- Khôi phục Docker Image trước đó.
+- Triển khai lại Amazon ECS Task Definition trước đó.
 - Khôi phục bản sao lưu MongoDB Atlas.
-- Triển khai lại thông qua AWS CodeBuild.
+- Triển khai lại qua AWS CodeBuild.
+- Cấu hình lại bản ghi DNS Route 53 nếu cần.
+- Cấp lại chứng chỉ ACM khi xác thực thất bại.
 
 ---
 
-# 8. Kết quả kỳ vọng
+# 8. Kết quả mong đợi
 
 ## Kết quả kỹ thuật
 
 Dự án hoàn thành sẽ cung cấp:
 
-- Một nền tảng mua bán đồ cũ cloud-native được đóng gói hoàn toàn bằng container.
-- Quy trình triển khai CI/CD tự động sử dụng GitHub và AWS CodeBuild.
-- Hệ thống lưu trữ hình ảnh đáng tin cậy sử dụng Amazon S3.
-- Khả năng triển khai container có thể mở rộng bằng Amazon ECS Fargate.
-- Cơ sở dữ liệu tập trung trên nền tảng đám mây sử dụng MongoDB Atlas.
-- Kiến trúc đám mây sẵn sàng cho môi trường thực tế với cân bằng tải.
+- Nền tảng chợ đồ cũ cloud-native được container hóa hoàn chỉnh.
+- Triển khai CI/CD tự động bằng GitHub và AWS CodeBuild.
+- Lưu trữ hình ảnh tin cậy bằng Amazon S3.
+- Triển khai container có khả năng mở rộng bằng Amazon ECS Fargate.
+- Giao tiếp HTTPS an toàn bằng AWS Certificate Manager (ACM).
+- Quản lý tên miền tùy chỉnh bằng Amazon Route 53.
+- Cân bằng tải bằng Application Load Balancer.
+- Cơ sở dữ liệu đám mây tập trung bằng MongoDB Atlas.
+- Giám sát tài nguyên bằng Amazon CloudWatch.
+- Quản lý truy cập an toàn bằng AWS IAM.
 
 ## Giá trị kinh doanh
 
-Nền tảng thể hiện việc triển khai thực tế các công nghệ điện toán đám mây, container hóa và DevOps bằng các dịch vụ được quản lý của AWS. Kiến trúc có thể được mở rộng trong tương lai để hỗ trợ cổng thanh toán, hệ thống gợi ý, dịch vụ thông báo, phân tích dữ liệu và phát triển theo kiến trúc microservices, đồng thời vẫn duy trì khả năng mở rộng và hiệu quả vận hành.
+Dự án minh họa việc triển khai thực tế điện toán đám mây, container hóa và DevOps bằng các dịch vụ AWS được quản lý.
+
+Kiến trúc cloud-native giúp đơn giản hóa triển khai, giảm công sức vận hành, cải thiện khả năng mở rộng và cung cấp nền tảng tin cậy cho việc mở rộng trong tương lai.
+
+Các cải tiến trong tương lai có thể bao gồm tích hợp thanh toán trực tuyến, hệ thống gợi ý, dịch vụ thông báo, bảng điều khiển phân tích và kiến trúc microservice, đồng thời vẫn duy trì tính sẵn sàng cao và hiệu quả vận hành.

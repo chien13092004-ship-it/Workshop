@@ -6,67 +6,89 @@ chapter: false
 pre: " <b> 2. </b> "
 ---
 
-# Second-Hand Marketplace Platform
+# Second-Hand Marketplace
+
 ## A Cloud-Native Second-Hand Marketplace on AWS
 
-## 1. Executive Summary
+---
 
-Second-Hand Marketplace Platform is a cloud-based web application that enables users to buy and sell second-hand products through a centralized online marketplace. The system provides user authentication, product management, image uploading, searching, and category management while utilizing AWS cloud services to ensure scalability, availability, and simplified deployment.
+# 1. Executive Summary
 
-The application is developed using **Node.js**, **Express.js**, **MongoDB Atlas**, and **EJS**, while the infrastructure is deployed on **Amazon ECS Fargate** behind an **Application Load Balancer**. Docker containers are stored in **Amazon ECR**, product images are stored in **Amazon S3**, and **AWS CodeBuild** automatically builds and deploys the application whenever new code is pushed to GitHub. The architecture provides automatic deployment, centralized storage, and cost-effective cloud infrastructure suitable for small and medium-sized e-commerce applications.
+Second-Hand Marketplace is a cloud-based web application that enables users to buy and sell second-hand products through a centralized online marketplace. The platform provides user authentication, product management, category management, image uploading, product searching, shopping cart, checkout, and order management while utilizing AWS managed services to ensure scalability, availability, security, and simplified deployment.
+
+The application is developed using **Node.js**, **Express.js**, **MongoDB Atlas**, and **EJS**. The application is containerized using **Docker** and deployed on **Amazon ECS Fargate** behind an **Application Load Balancer (ALB)**. Docker images are stored in **Amazon ECR**, uploaded product images are stored in **Amazon S3**, and **AWS CodeBuild** automatically builds and deploys the latest application whenever new source code is pushed to GitHub.
+
+The deployment environment also utilizes **Amazon Route 53** for domain management, **AWS Certificate Manager (ACM)** for HTTPS encryption, **Amazon CloudWatch** for monitoring, **AWS IAM** for access control, and **Amazon VPC** for secure networking. The architecture provides automated deployment, centralized storage, simplified management, and a scalable cloud infrastructure suitable for small and medium-sized e-commerce applications.
 
 ---
 
 # 2. Problem Statement
 
-### Current Problem
+## Current Problem
 
-Many second-hand marketplaces rely on social media platforms or manually managed websites, making product management inefficient and difficult to maintain. Images are often stored locally, deployments require manual updates, and scaling the application becomes challenging as the number of users increases. Traditional deployment also increases downtime and operational effort whenever new features or bug fixes are released.
+Many second-hand marketplaces rely on social media platforms or manually managed websites, making product management inefficient and difficult to maintain. Product images are often stored locally, deployments require manual updates, and scaling the application becomes increasingly difficult as the number of users grows.
 
-### Solution
+Traditional deployment methods also increase downtime, require additional operational effort, and make application maintenance more complicated whenever new features or bug fixes are released.
 
-The proposed solution builds a cloud-native second-hand marketplace platform using AWS managed services.
+## Solution
 
-Users can register accounts, log in securely, upload products with images, browse products by category, search products, and manage their listings through a web application. Product information is stored in MongoDB Atlas, while uploaded product images are stored in Amazon S3.
+The proposed solution develops a cloud-native second-hand marketplace platform using AWS managed services.
 
-The application is containerized using Docker and deployed on Amazon ECS Fargate. AWS CodeBuild automatically detects new commits from GitHub, builds a Docker image, pushes it to Amazon ECR, and triggers Amazon ECS to deploy the latest version without manual intervention.
+Users can register accounts, log in securely, upload products with images, browse products by category, search products, manage shopping carts, place orders, and manage their own product listings through a web application.
 
-### Benefits and Return on Investment
+Application data is stored in **MongoDB Atlas**, while uploaded product images are stored in **Amazon S3**.
 
-The platform significantly reduces deployment time through automated CI/CD while improving system scalability and reliability. Developers only need to push source code to GitHub, and the entire deployment process is handled automatically. The cloud architecture also minimizes server management tasks and provides a strong foundation for future expansion. During development, AWS Free Tier and AWS Academy credits help reduce operational costs.
+The application is containerized using Docker and deployed on **Amazon ECS Fargate**. Whenever source code is pushed to GitHub, **AWS CodeBuild** automatically builds a Docker image, pushes it to **Amazon ECR**, and deploys the latest version to Amazon ECS.
+
+HTTPS communication is secured using **AWS Certificate Manager (ACM)** and the application is accessible through a custom domain configured using **Amazon Route 53**.
+
+## Benefits
+
+The proposed architecture provides several benefits:
+
+- Simplified application deployment.
+- Automated CI/CD pipeline.
+- Scalable cloud infrastructure.
+- Secure HTTPS communication.
+- Reliable cloud storage.
+- Simplified application maintenance.
+- Reduced operational effort.
+- Easy future scalability.
 
 ---
 
 # 3. Solution Architecture
 
-The application follows a cloud-native container architecture using AWS managed services.
+The application follows a cloud-native container architecture deployed on AWS managed services.
 
 ## Solution Architecture
 
-![System Architecture](/images/2-Proposal/system_architecture.jpg)
+![System Architecture](/images/2-Proposal/system_architecture.png)
 
-### AWS Services Utilized
+## AWS Services Utilized
 
-- **Amazon ECS Fargate** – Runs Docker containers without managing servers.
-- **Amazon ECR** – Stores Docker images used by ECS.
-- **AWS CodeBuild** – Automatically builds and deploys new application versions from GitHub.
-- **Application Load Balancer (ALB)** – Distributes incoming HTTP requests across ECS tasks.
-- **Amazon S3** – Stores uploaded product images.
-- **MongoDB Atlas** – Stores application data including users, products, and categories.
-- **AWS IAM** – Manages permissions for AWS resources.
-- **Amazon CloudWatch** – Collects application logs and monitoring information.
+- Amazon VPC
+- AWS IAM
+- Amazon ECS Fargate
+- Amazon ECR
+- Amazon S3
+- Application Load Balancer (ALB)
+- Amazon Route 53
+- AWS Certificate Manager (ACM)
+- AWS CodeBuild
+- Amazon CloudWatch
+- MongoDB Atlas
 
-### Component Design
+## Component Design
 
-**Frontend**
+### Frontend
 
 - HTML
 - CSS
-- Bootstrap
 - JavaScript
 - EJS Template Engine
 
-**Backend**
+### Backend
 
 - Node.js
 - Express.js
@@ -74,25 +96,34 @@ The application follows a cloud-native container architecture using AWS managed 
 - Multer
 - AWS SDK for JavaScript
 
-**Database**
+### Database
 
 - MongoDB Atlas
 
-**Image Storage**
+### Image Storage
 
 - Amazon S3
 
-**Container Platform**
+### Container Platform
 
 - Docker
 - Amazon ECS Fargate
 
-**Deployment Pipeline**
+### Deployment Pipeline
 
-- GitHub
-- AWS CodeBuild
-- Amazon ECR
-- Amazon ECS
+GitHub
+
+↓
+
+AWS CodeBuild
+
+↓
+
+Amazon ECR
+
+↓
+
+Amazon ECS Fargate
 
 ---
 
@@ -107,12 +138,14 @@ The project was implemented through the following phases:
 - Develop the backend using Node.js and Express.js.
 - Configure MongoDB Atlas for cloud database storage.
 - Integrate Amazon S3 for product image storage.
-- Dockerize the application.
+- Containerize the application using Docker.
 - Push Docker images to Amazon ECR.
 - Deploy Docker containers on Amazon ECS Fargate.
 - Configure Application Load Balancer.
-- Implement Continuous Integration and Continuous Deployment using GitHub and AWS CodeBuild.
-- Perform testing, optimization, and production deployment.
+- Configure Amazon Route 53 and AWS Certificate Manager (ACM).
+- Configure AWS CodeBuild for automated build and deployment.
+- Monitor the application using Amazon CloudWatch.
+- Perform system testing and deploy the production environment.
 
 ## Technical Requirements
 
@@ -133,13 +166,16 @@ The project was implemented through the following phases:
 
 ### Cloud Services
 
+- Amazon VPC
+- AWS IAM
 - Amazon ECS Fargate
 - Amazon ECR
 - Amazon S3
+- Application Load Balancer (ALB)
+- Amazon Route 53
+- AWS Certificate Manager (ACM)
 - AWS CodeBuild
-- Application Load Balancer
 - Amazon CloudWatch
-- AWS IAM
 
 ### Development Tools
 
@@ -148,56 +184,66 @@ The project was implemented through the following phases:
 - GitHub
 - Docker Desktop
 - MongoDB Compass
-
 ---
 
 # 5. Roadmap & Milestones
 
-### Week 1
+The project was completed through the following implementation phases.
 
-- Requirement analysis
-- AWS architecture planning
-- Database design
+### Phase 1 – Project Planning
 
-### Week 2
+- Analyze system requirements.
+- Design the overall system architecture.
+- Design the MongoDB database structure.
+- Prepare the development environment.
 
-- User authentication
-- Product CRUD
-- Category management
+### Phase 2 – Application Development
 
-### Week 3
+- Develop user authentication.
+- Develop customer functions.
+- Develop shop management functions.
+- Develop administrator functions.
+- Develop product management.
+- Develop order management.
 
-- MongoDB Atlas integration
-- Amazon S3 integration
-- Product image upload
+### Phase 3 – Cloud Integration
 
-### Week 4
+- Configure MongoDB Atlas.
+- Integrate Amazon S3 for image storage.
+- Test cloud storage connectivity.
 
-- Docker containerization
-- Amazon ECR configuration
+### Phase 4 – Containerization
 
-### Week 5
+- Create Dockerfile.
+- Build Docker Image.
+- Test the Docker container locally.
 
-- Amazon ECS deployment
-- Application Load Balancer configuration
+### Phase 5 – AWS Deployment
 
-### Week 6
+- Push Docker Image to Amazon ECR.
+- Deploy the application to Amazon ECS Fargate.
+- Configure Application Load Balancer.
+- Configure Amazon Route 53.
+- Configure AWS Certificate Manager (ACM).
 
-- GitHub integration
-- AWS CodeBuild configuration
-- Automatic deployment pipeline
+### Phase 6 – CI/CD
 
-### Week 7
+- Connect GitHub repository.
+- Configure AWS CodeBuild.
+- Automate application deployment.
 
-- Testing
-- Bug fixing
-- Performance optimization
+### Phase 7 – Monitoring & Testing
 
-### Week 8
+- Configure Amazon CloudWatch.
+- Perform functional testing.
+- Verify application deployment.
+- Fix deployment issues.
 
-- Final deployment
-- Documentation
-- Project presentation
+### Phase 8 – Project Completion
+
+- Deploy the production environment.
+- Complete documentation.
+- Demonstrate the completed project.
 
 ---
 
@@ -218,18 +264,22 @@ The project was implemented through the following phases:
 ### Cost Control Guidelines
 
 - **AWS Budgets:** Automated alerts when costs exceed **$5.00** and **$10.00**.
-- **Amazon S3 Lifecycle Rules:** Automatically delete unused product images after **30 days**.
 - **Amazon ECR Lifecycle Policy:** Automatically remove unused Docker images.
 - **AWS CodeBuild:** Trigger builds only when code is pushed to the GitHub repository.
-- **Post-demo Cleanup:** Remove ECS services, ECR images, and unused S3 objects after project completion to avoid unnecessary charges.
+- **Post-demo Cleanup:** Remove ECS services, ECR images, unused S3 objects, Application Load Balancer, CloudWatch alarms, ACM certificates, and Route 53 hosted zones after project completion to avoid unnecessary charges.
+
+---
 
 # 7. Risk Assessment
 
 ## Risk Matrix
 
-- ECS deployment failure.
+- Amazon ECS deployment failure.
 - MongoDB Atlas connectivity issues.
 - Amazon S3 upload failures.
+- AWS CodeBuild build failures.
+- Route 53 DNS configuration issues.
+- HTTPS certificate configuration issues.
 - Unexpected AWS service charges.
 
 ## Mitigation Strategies
@@ -239,13 +289,17 @@ The project was implemented through the following phases:
 - Version Docker images using Amazon ECR.
 - Perform regular MongoDB Atlas backups.
 - Apply IAM least privilege policies.
+- Verify Route 53 DNS records before deployment.
+- Validate ACM certificate status before enabling HTTPS.
 
 ## Contingency Plans
 
 - Roll back to the previous Docker image.
-- Redeploy the previous ECS Task Definition.
+- Redeploy the previous Amazon ECS Task Definition.
 - Restore MongoDB Atlas backups.
 - Redeploy through AWS CodeBuild.
+- Reconfigure Route 53 DNS records if necessary.
+- Reissue the ACM certificate when validation fails.
 
 ---
 
@@ -255,13 +309,21 @@ The project was implemented through the following phases:
 
 The completed project will provide:
 
-- A fully containerized cloud-native marketplace platform.
+- A fully containerized cloud-native second-hand marketplace platform.
 - Automatic CI/CD deployment using GitHub and AWS CodeBuild.
 - Reliable image storage using Amazon S3.
 - Scalable container deployment using Amazon ECS Fargate.
+- Secure HTTPS communication using AWS Certificate Manager (ACM).
+- Custom domain management using Amazon Route 53.
+- Load balancing using Application Load Balancer.
 - Centralized cloud database using MongoDB Atlas.
-- Production-ready cloud architecture with load balancing.
+- Resource monitoring using Amazon CloudWatch.
+- Secure access management using AWS IAM.
 
 ## Business Value
 
-The platform demonstrates practical implementation of cloud computing, containerization, and DevOps practices using AWS managed services. The architecture can be expanded in the future to support payment gateways, recommendation systems, notification services, analytics, and microservice-based development while maintaining scalability and operational efficiency.
+The project demonstrates the practical implementation of cloud computing, containerization, and DevOps practices using AWS managed services.
+
+The cloud-native architecture simplifies deployment, reduces operational effort, improves scalability, and provides a reliable foundation for future expansion.
+
+Future enhancements may include online payment integration, recommendation systems, notification services, analytics dashboards, and microservice-based architecture while maintaining high availability and operational efficiency.

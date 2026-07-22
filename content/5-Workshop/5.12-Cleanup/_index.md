@@ -10,7 +10,7 @@ pre = "<b>5.12. </b>"
 
 ## Overview
 
-After successfully deploying and testing the TechMarket application, the AWS resources created during this workshop should be removed to avoid unnecessary charges.
+After successfully deploying and testing the Second-Hand Marketplace application, the AWS resources created during this workshop should be removed to avoid unnecessary charges.
 
 This section guides you through deleting the deployed infrastructure in a safe order.
 

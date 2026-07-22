@@ -8,7 +8,7 @@ pre : " <b> 5.11. </b> "
 
 # 5.11. Testing
 
-This section demonstrates the complete deployment of the TechMarket E-Commerce platform on AWS. It showcases the main user interfaces of the application and explains how each feature interacts with the deployed cloud infrastructure, including Amazon ECS Fargate, Amazon S3, MongoDB Atlas, Amazon Route 53, AWS Certificate Manager (ACM), Application Load Balancer, Amazon CloudWatch, Amazon ECR, and AWS CodeBuild.
+This section demonstrates the complete deployment of the Second-Hand Marketplace E-Commerce platform on AWS. It showcases the main user interfaces of the application and explains how each feature interacts with the deployed cloud infrastructure, including Amazon ECS Fargate, Amazon S3, MongoDB Atlas, Amazon Route 53, AWS Certificate Manager (ACM), Application Load Balancer, Amazon CloudWatch, Amazon ECR, and AWS CodeBuild.
 
 ---
 
@@ -16,7 +16,7 @@ This section demonstrates the complete deployment of the TechMarket E-Commerce p
 
 ## A. Homepage
 
-The homepage is the primary interface where customers browse products available on the TechMarket platform.
+The homepage is the primary interface where customers browse products available on the Second-Hand Marketplace platform.
 
 ### Infrastructure Integration
 
@@ -216,4 +216,4 @@ During application testing, the deployed platform integrates the following AWS s
 | Amazon CloudWatch | Monitors application health |
 | AWS CodeBuild | Automates build and deployment |
 
-The successful execution of all interfaces demonstrates that the TechMarket application has been fully deployed and is operating correctly on AWS Cloud infrastructure.
+The successful execution of all interfaces demonstrates that the Second-Hand Marketplace application has been fully deployed and is operating correctly on AWS Cloud infrastructure.

@@ -57,7 +57,7 @@ Xác nhận các hình ảnh đã được lưu trong Bucket.
 
 Các hình ảnh này sẽ được ứng dụng sử dụng khi hiển thị thông tin sản phẩm.
 
-![Bucket Objects](/images/5-Workshop/5.5-Application-Services/bucket-objects.png)
+![Bucket Objects](/images/5-Workshop/5.5-Application-Services/bucket-object.png)
 
 ---
 

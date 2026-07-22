@@ -6,11 +6,11 @@ chapter: false
 pre: " <b> 5. </b> "
 ---
 
-# Triển khai nền tảng thương mại điện tử TechMarket trên AWS
+# Triển khai Second-Hand Marketplace trên AWS
 
 #### Tổng quan
 
-Trong workshop này, chúng ta sẽ xây dựng và triển khai **nền tảng thương mại điện tử TechMarket** bằng kiến trúc cloud-native trên AWS.
+Trong workshop này, chúng ta sẽ xây dựng và triển khai **Second-Hand Marketplace** bằng kiến trúc cloud-native trên AWS.
 
 Giải pháp sử dụng các dịch vụ AWS như **Amazon ECS Fargate**, **Amazon ECR**, **Amazon S3**, **AWS CodeBuild**, **Application Load Balancer**, **Amazon CloudWatch**, **Amazon Route 53** và **AWS Certificate Manager (ACM)**, kết hợp với **MongoDB Atlas** nhằm xây dựng một nền tảng có khả năng mở rộng, bảo mật, tính sẵn sàng cao và hỗ trợ triển khai tự động.
 
